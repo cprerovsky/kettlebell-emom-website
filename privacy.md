@@ -1,6 +1,6 @@
 # Privacy Policy for Kettlebell EMOM Builder
 
-**Last updated: September 20, 2025**
+**Last updated: September 30, 2025**
 
 ## 1. Introduction
 We take your privacy seriously. This Privacy Policy explains how **Kettlebell EMOM Builder** (“we”, “our”, “us”) handles information when you use our mobile app, website, and related services (“Service”).
