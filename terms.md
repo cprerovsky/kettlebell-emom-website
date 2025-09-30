@@ -1,80 +1,55 @@
-# Terms of Use – Kettlebell EMOM Builder
+# Terms of Use — Kettlebell EMOM Builder
 
-_Last updated: [insert date]_
+**Last updated:** September 30, 2025
 
-These Terms of Use (“Terms”) govern your use of the Kettlebell EMOM Builder mobile application (“App”).  
-The App is published by [Your Name or Company], based in Austria (“we,” “our,” or “us”).  
-By downloading, installing, or using the App, you agree to these Terms. If you do not agree, do not use the App.
+## 1. Acceptance of Terms  
+By accessing or using **Kettlebell EMOM Builder** (the “App” or “Service”), you agree to be bound by these Terms of Use (“Terms”). If you do not agree, please do not use the App.
 
----
+## 2. Use of the App  
+- You may use the App for your **personal**, **non-commercial** use only.  
+- You may not reverse engineer, decompile, copy, modify, distribute, sublicense, or otherwise exploit the App, in whole or in part.  
+- You must comply with all applicable laws in your use.
 
-## 1. Purpose of the App
-The App provides general fitness and wellness information for kettlebell EMOM (Every Minute on the Minute) workouts.  
-It does **not** provide medical advice, diagnosis, or treatment.  
-Always consult a physician before beginning any exercise program, especially if you have injuries, health conditions, are pregnant, or are new to training. Stop exercising immediately if you feel pain, dizziness, or shortness of breath.
+## 3. Fitness / Health Disclaimer  
+The App offers workout plans and exercise guidance, but it does **not** provide medical advice, diagnosis, or treatment.  
 
----
+You **should consult your physician or another qualified health professional** before beginning any exercise program, especially if you have an existing medical condition, injury, are pregnant, or are new to training.  
 
-## 2. License
-- We grant you a personal, non-exclusive, non-transferable, revocable license to use the App on devices you own or control.  
-- You may not copy, modify, reverse engineer, distribute, or resell the App.  
-- All intellectual property rights in the App remain with us.
+By using the App, you confirm that you are in good health and physically able to perform kettlebell exercises. You acknowledge and accept that all exercise involves risk of injury, and you voluntarily assume full responsibility for your participation. We are not responsible for any injuries, health problems, or other issues that may result from your use of the App.
 
----
+## 4. Intellectual Property  
+All content, code, design, and materials in the App are owned by or licensed to us. You receive a limited, non-exclusive, non-transferable license to use the App for personal use, subject to these Terms.
 
-## 3. User Responsibilities and Risk
-- You are solely responsible for your health and safety when using the App.  
-- By using the App, you confirm you are physically able to perform kettlebell exercises and accept the risk of injury.  
-- We make no guarantees regarding fitness results or outcomes.
+## 5. Third-Party Providers & External Links  
+The App may integrate or rely on third-party services (e.g. analytics providers, payment processors). We are not responsible for their actions or uptime. Use of such services is also subject to their own terms.
 
----
+## 6. Subscriptions and Payments  
+- Some features may be offered on a paid subscription basis through the Apple App Store (and later, possibly Google Play).  
+- Subscriptions are managed and billed by the platform provider. Cancellation and refunds follow their policies.  
+- Prices may vary by region and may change over time.  
 
-## 4. Subscriptions and Payments
-- Some features may be offered on a paid subscription basis through the Apple App Store.  
-- Subscriptions are managed and billed by Apple. Cancellation and refunds follow Apple’s policies.  
-- Prices may vary by region and may change over time.
+## 7. Termination  
+We reserve the right to suspend or terminate your access at our sole discretion, without notice, for violation of these Terms or misuse of the App. These Terms survive termination.
 
----
+## 8. Warranty Disclaimer & Limitation of Liability  
+- The App is provided “as is” and “as available.” We make no warranties that it will be uninterrupted, error-free, or that bugs will be fixed.  
+- To the maximum extent permitted by law, we disclaim all implied warranties, including merchantability and fitness for a particular purpose.  
+- In no event shall we be liable for any indirect, incidental, special, consequential, or punitive damages (including loss of profits, data, or injury) arising from or related to your use of the App.  
+- Nothing in these Terms excludes liability for death or personal injury caused by our gross negligence or willful misconduct.  
 
-## 5. Privacy
-We process personal data in accordance with our [Privacy Policy](privacy.md). By using the App, you consent to such processing.
+## 9. Changes to Terms  
+We may update these Terms at any time. Changes become effective when posted in the App or on our website. Your continued use constitutes acceptance of the new Terms.
 
----
+## 10. Governing Law & Disputes  
+These Terms are governed by the laws of **Austria**. If you are an EU consumer, you may also benefit from mandatory consumer protection provisions in your country of residence.  
 
-## 6. No Warranties
-The App is provided “as is” and “as available.”  
-We make no warranties, express or implied, regarding availability, accuracy, or suitability for your fitness goals.  
-To the maximum extent permitted by law, we disclaim all implied warranties, including merchantability and fitness for a particular purpose.
+Disputes will be subject to the non-exclusive jurisdiction of the Austrian courts in Vienna, unless otherwise required by applicable law.
 
----
+## 11. Severability  
+If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.
 
-## 7. Limitation of Liability
-- To the fullest extent permitted by law, we are not liable for any injury, loss, or damages (direct, indirect, incidental, or consequential) arising from your use of the App.  
-- Nothing in these Terms excludes liability for death or personal injury caused by our gross negligence or willful misconduct.
+## 12. Contact  
+If you have questions or notices regarding these Terms, contact us at:  
 
----
-
-## 8. Termination
-We may suspend or terminate your access to the App if you violate these Terms. Upon termination, your license to use the App ends immediately.
-
----
-
-## 9. Governing Law and Jurisdiction
-- These Terms are governed by the laws of Austria, without regard to conflict-of-laws principles.  
-- If you are an EU consumer, you may also benefit from mandatory consumer protection provisions in your country of residence.  
-- Disputes will be subject to the non-exclusive jurisdiction of the Austrian courts in Vienna.
-
----
-
-## 10. Changes to These Terms
-We may update these Terms from time to time. We will notify you by updating the “Last updated” date.  
-Continued use of the App after changes means you accept the revised Terms.
-
----
-
-## 11. Contact
-If you have questions, contact:  
-[Your Name]  
-[Street Address]  
-[Postal Code, City, Country]  
-[Email Address]
+Clemens Prerovsky 
+Email: contact@kbemom.com
