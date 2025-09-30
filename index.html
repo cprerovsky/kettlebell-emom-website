@@ -54,9 +54,13 @@
         <!-- Phone Mockup Section -->
         <div class="flex justify-center -mt-12 sm:-mt-16 md:-mt-24">
             <div class="bg-gray-800 p-2 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-700">
-                <div class="w-64 h-auto sm:w-80 bg-gray-900 rounded-xl sm:rounded-2xl overflow-hidden">
-                    <!-- Placeholder for App Screenshot -->
-                    <img src="https://placehold.co/375x812/111827/FFF?text=App+Screenshot" alt="App Screenshot" class="w-full h-auto">
+                <div id="screenshot-container" class="relative w-64 h-auto sm:w-80 bg-gray-900 rounded-xl sm:rounded-2xl overflow-hidden">
+                    <!-- NOTE: Make sure the image paths in media/ are correct -->
+                    <img src="media/screenshot-1.png" alt="App screenshot showing the workout generation screen" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-100">
+                    <img src="media/screenshot-2.png" alt="App screenshot showing the EMOM timer in action" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-0 absolute top-0 left-0">
+                    <img src="media/screenshot-3.png" alt="App screenshot showing the workout completion screen" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-0 absolute top-0 left-0">
+                    <!-- You can add more screenshots here if needed -->
+                    <!-- <img src="media/screenshot-4.png" alt="Another app screenshot" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-0 absolute top-0 left-0"> -->
                 </div>
             </div>
         </div>
@@ -208,5 +212,27 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const screenshots = document.querySelectorAll('#screenshot-container .screenshot');
+            if (screenshots.length <= 1) return;
+
+            let currentIndex = 0;
+            const rotationInterval = 3000; // 3 seconds
+
+            setInterval(() => {
+                // Fade out the current screenshot
+                screenshots[currentIndex].classList.remove('opacity-100');
+                screenshots[currentIndex].classList.add('opacity-0');
+
+                // Update the index to the next screenshot, looping back to the start
+                currentIndex = (currentIndex + 1) % screenshots.length;
+
+                // Fade in the new screenshot
+                screenshots[currentIndex].classList.remove('opacity-0');
+                screenshots[currentIndex].classList.add('opacity-100');
+            }, rotationInterval);
+        });
+    </script>
 </body>
 </html>
