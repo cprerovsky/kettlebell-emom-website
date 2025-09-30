@@ -1,96 +1,84 @@
-# Privacy Policy – Kettlebell EMOM Builder
+# Privacy Policy for Kettlebell EMOM Builder
 
-_Last updated: [insert date]_
+**Last updated: September 20, 2025**
 
-We respect your privacy. This Privacy Policy explains how we handle your information when you use the Kettlebell EMOM Builder mobile application (“App”).
+## 1. Introduction
+We take your privacy seriously. This Privacy Policy explains how **Kettlebell EMOM Builder** (“we”, “our”, “us”) handles information when you use our mobile app, website, and related services (“Service”).
 
----
+At present, we do **not collect personal data** such as names, email addresses, or account information. This policy also outlines how we will handle data once we add features such as analytics or paid subscriptions in the future.
 
-## 1. Controller
-[Your Name or Company]  
-[Street Address]  
-[Postal Code, City, Country]  
-Email: [Your Email Address]
+## 2. Data Controller
+The data controller responsible for your data is:
 
-We are based in Austria and subject to the EU General Data Protection Regulation (GDPR).
+Clemens Prerovsky 
+Email: legal@kbemom.com  
 
----
+## 3. Data We Collect
 
-## 2. Information We Collect
-The App is designed to minimize personal data collection.  
-- We do **not** require account registration.  
-- We may collect basic analytics (e.g. app usage, crash reports) provided by Apple or third-party services to improve performance.  
-- If you contact us by email, we will process the data you provide (e.g. name, email address, message).
+### a) Current data collection
+- **No personal accounts**: We do not currently collect names, email addresses, or login details.  
+- **No remote workout storage**: Workout data is not transmitted or stored on our servers.  
 
----
+### b) Planned features (future updates)
+To improve the Service, we may add:
+- **Local workout storage**: Workout history saved only on your device.  
+- **Analytics**: Anonymous usage statistics (e.g. workouts generated, workout completion rates, session lengths).  
+- **Cookies on the website**: For analytics only (with user consent).  
+- **Payment data**: If we add a subscription or paywall, this will be processed via a trusted third-party payment provider (e.g. Stripe).  
 
-## 3. How We Use Information
-- To operate and improve the App.  
-- To respond to inquiries.  
-- To analyze usage in aggregate form (not to profile individual users).  
+We will update this Privacy Policy before introducing these features.
 
-We do not sell personal data to third parties.
+## 4. Use of Data
+If and when data is collected, it may be used to:
+- Operate and improve the Service  
+- Understand how users engage with workouts and features  
+- Provide customer support and respond to inquiries  
+- Process payments for premium features (if applicable)  
+- Comply with legal obligations  
 
----
+## 5. Legal Basis (GDPR)
+If you are located in the European Union, we process personal data under one or more of the following legal bases:
+- **Consent** (e.g. analytics cookies)  
+- **Performance of a contract** (if you purchase a subscription)  
+- **Legitimate interests** (e.g. improving our Service)  
+- **Legal obligations**  
 
-## 4. Legal Basis
-We process data on the basis of:  
-- **Art. 6(1)(b) GDPR** (performance of contract: providing the App),  
-- **Art. 6(1)(f) GDPR** (legitimate interests: improving functionality), or  
-- **Art. 6(1)(a) GDPR** (consent, where applicable).
+## 6. Data Retention
+- We do not currently store any personal data.  
+- If analytics are introduced, data will be stored in aggregated or anonymized form.  
+- If payments are introduced, billing records will be retained as required by law.  
+- Workout data saved locally on your device remains only on your device and is under your control.  
 
----
+## 7. Your Rights
+You have the following rights under GDPR:
+- Access to your data  
+- Correction of inaccurate data  
+- Deletion of your data  
+- Restriction or objection to processing  
+- Data portability  
+- Withdrawal of consent at any time (for cookies/analytics)  
+- Complaint to the Austrian Data Protection Authority (Datenschutzbehörde, dsb@dsb.gv.at)  
 
-## 5. Data Retention
-- Usage data is retained only as long as necessary for analysis and troubleshooting.  
-- Communication data is retained as long as required to handle your request.  
-- We delete or anonymize data when no longer needed.
+To exercise your rights, please contact: [your email].
 
----
+## 8. Data Sharing & Third-Party Services
+- Currently, no data is shared with third parties.  
+- In future, we may use third-party processors (e.g. Google Analytics, Stripe). These services will be listed here once implemented.  
 
-## 6. Your Rights (GDPR)
-You have the right to:  
-- Access your data (Art. 15 GDPR)  
-- Rectify incorrect data (Art. 16 GDPR)  
-- Erase data (“right to be forgotten,” Art. 17 GDPR)  
-- Restrict processing (Art. 18 GDPR)  
-- Data portability (Art. 20 GDPR)  
-- Object to processing (Art. 21 GDPR)  
-- Lodge a complaint with your local supervisory authority (in Austria: Datenschutzbehörde).
+## 9. International Transfers
+If data is transferred outside the EU (e.g. via Google services), we will ensure adequate safeguards such as Standard Contractual Clauses.
 
----
+## 10. Security
+We implement appropriate technical and organizational measures to protect data. However, no system is completely secure, and we cannot guarantee absolute security.
 
-## 7. Data Sharing
-We may share limited data with:  
-- **Apple** (App Store and system services)  
-- **Analytics/Crash reporting providers** (if enabled)  
-These providers process data on our behalf in compliance with GDPR.
+## 11. Children
+Our Service is not directed at children under 16. We do not knowingly collect data from children.
 
----
+## 12. Changes to This Policy
+We may update this Privacy Policy. Updates will be posted on this page and, for major changes, communicated via the app.
 
-## 8. International Transfers
-If third-party services transfer data outside the EU/EEA, we ensure adequate protection through EU Standard Contractual Clauses or equivalent safeguards.
+## 13. Contact Us
+If you have any questions or requests regarding this Privacy Policy, please contact:
 
----
-
-## 9. Security
-We use reasonable technical and organizational measures to protect your data. However, no system is 100% secure.
-
----
-
-## 10. Children
-The App is not directed to children under 16. We do not knowingly collect personal data from children under 16.
-
----
-
-## 11. Changes
-We may update this Privacy Policy. Changes will be posted here with an updated “Last updated” date.
-
----
-
-## 12. Contact
-If you have questions about this Privacy Policy, contact:  
-[Your Name]  
-[Street Address]  
-[Postal Code, City, Country]  
-[Email Address]
+Clemens Prerovsky 
+Email: contact@kbemom.com
