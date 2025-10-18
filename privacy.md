@@ -1,11 +1,11 @@
 # Privacy Policy for Kettlebell EMOM Builder
 
-**Last updated: September 30, 2025**
+**Last updated: October 18, 2025**
 
 ## 1. Introduction
 We take your privacy seriously. This Privacy Policy explains how **Kettlebell EMOM Builder** (“we”, “our”, “us”) handles information when you use our mobile app, website, and related services (“Service”).
 
-At present, we do **not collect personal data** such as names, email addresses, or account information. This policy also outlines how we will handle data once we add features such as analytics or paid subscriptions in the future.
+At present, we do **not collect personal data** such as names, email addresses, or account information. We do store certain preferences and counters **locally on your device** to operate the free tier and remember your workout settings. This policy also outlines how we will handle data once we add features such as analytics or paid subscriptions in the future.
 
 ## 2. Data Controller
 The data controller responsible for your data is:
@@ -18,13 +18,17 @@ Email: legal@kbemom.com
 ### a) Current data collection
 - **No personal accounts**: We do not currently collect names, email addresses, or login details.  
 - **No remote workout storage**: Workout data is not transmitted or stored on our servers.  
+- **On-device storage (Capacitor Preferences)**: We store the following information locally on your device to operate the App:  
+	- The number of free workouts used (to determine when the paywall applies).  
+	- Workout configuration preferences such as selected muscle groups, number of rounds, and number of exercises.  
+	This data does not leave your device and is under your control. Clearing app data or reinstalling the App may reset this information.
 
 ### b) Planned features (future updates)
 To improve the Service, we may add:
 - **Local workout storage**: Workout history saved only on your device.  
 - **Analytics**: Anonymous usage statistics (e.g. workouts generated, workout completion rates, session lengths).  
 - **Cookies on the website**: For analytics only (with user consent).  
-- **Payment data**: If we add a subscription or paywall, this will be processed via a trusted third-party payment provider (e.g. Stripe).  
+- **Payment data**: If we add or expand subscriptions or a paywall, payments will be processed via platform providers (e.g. Apple App Store / Google Play) or a trusted third-party payment provider (e.g. Stripe). We do not receive your full payment details.  
 
 We will update this Privacy Policy before introducing these features.
 
@@ -47,7 +51,7 @@ If you are located in the European Union, we process personal data under one or 
 - We do not currently store any personal data.  
 - If analytics are introduced, data will be stored in aggregated or anonymized form.  
 - If payments are introduced, billing records will be retained as required by law.  
-- Workout data saved locally on your device remains only on your device and is under your control.  
+- Workout data and preferences saved locally on your device (including free workout counters and workout configuration) remain only on your device and are under your control.  
 
 ## 7. Your Rights
 You have the following rights under GDPR:
@@ -59,11 +63,11 @@ You have the following rights under GDPR:
 - Withdrawal of consent at any time (for cookies/analytics)  
 - Complaint to the Austrian Data Protection Authority (Datenschutzbehörde, dsb@dsb.gv.at)  
 
-To exercise your rights, please contact: [your email].
+To exercise your rights, please contact: legal@kbemom.com.
 
 ## 8. Data Sharing & Third-Party Services
 - Currently, no data is shared with third parties.  
-- In future, we may use third-party processors (e.g. Google Analytics, Stripe). These services will be listed here once implemented.  
+- In future, we may use third-party processors (e.g. Google Analytics, Stripe, Apple/Google in-app purchases). These services will be listed here once implemented.  
 
 ## 9. International Transfers
 If data is transferred outside the EU (e.g. via Google services), we will ensure adequate safeguards such as Standard Contractual Clauses.

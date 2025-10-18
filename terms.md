@@ -1,6 +1,6 @@
 # Terms of Use — Kettlebell EMOM Builder
 
-**Last updated:** September 30, 2025
+**Last updated:** October 18, 2025
 
 ## 1. Acceptance of Terms  
 By accessing or using **Kettlebell EMOM Builder** (the “App” or “Service”), you agree to be bound by these Terms of Use (“Terms”). If you do not agree, please do not use the App.
@@ -9,6 +9,7 @@ By accessing or using **Kettlebell EMOM Builder** (the “App” or “Service�
 - You may use the App for your **personal**, **non-commercial** use only.  
 - You may not reverse engineer, decompile, copy, modify, distribute, sublicense, or otherwise exploit the App, in whole or in part.  
 - You must comply with all applicable laws in your use.
+ - You may **not** attempt to bypass, disable, or otherwise circumvent any usage limits, metering, or paywall mechanisms (including by modifying local storage or device settings, reinstalling to reset counters, using emulators, or similar methods).
 
 ## 3. Fitness / Health Disclaimer  
 The App offers workout plans and exercise guidance, but it does **not** provide medical advice, diagnosis, or treatment.  
@@ -23,10 +24,14 @@ All content, code, design, and materials in the App are owned by or licensed to 
 ## 5. Third-Party Providers & External Links  
 The App may integrate or rely on third-party services (e.g. analytics providers, payment processors). We are not responsible for their actions or uptime. Use of such services is also subject to their own terms.
 
-## 6. Subscriptions and Payments  
-- Some features may be offered on a paid subscription basis through the Apple App Store (and later, possibly Google Play).  
-- Subscriptions are managed and billed by the platform provider. Cancellation and refunds follow their policies.  
-- Prices may vary by region and may change over time.  
+## 6. Free Tier, Paywall, Subscriptions, and Payments  
+- The App may offer a limited free tier. Currently, new users can access up to **three (3) free workouts** before encountering a paywall. We may change the free allotment, promotional access, or eligibility at any time.  
+- We use device-local storage to keep track of free usage and certain preferences. Deleting app data, reinstalling the App, or changing devices may impact locally stored data; this does not entitle you to additional free access. Attempts to manipulate or reset counters to avoid the paywall are prohibited.  
+- Premium features may be offered via **in-app purchases** or **auto-renewing subscriptions** through the Apple App Store (and may be offered via Google Play in the future).  
+- Subscriptions and payments are processed and managed by the platform provider. You can manage or cancel your subscription in your platform account settings. **Billing, renewals, cancellations, refunds, and cooling-off rights** are governed by the platform’s terms and policies.  
+- Prices may vary by region and may change over time. Taxes, fees, and exchange rates may apply.  
+- Access to premium features is tied to the platform account through which you purchased. Cross-platform entitlements are not guaranteed unless expressly stated.  
+- Free trials (if offered) convert to a paid subscription unless canceled before the trial ends, according to the platform’s terms.  
 
 ## 7. Termination  
 We reserve the right to suspend or terminate your access at our sole discretion, without notice, for violation of these Terms or misuse of the App. These Terms survive termination.
