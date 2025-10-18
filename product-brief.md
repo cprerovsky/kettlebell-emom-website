@@ -7,14 +7,13 @@ Kettlebell EMOM Builder is the **fastest and simplest way** to create structured
 ## Product Description
 Kettlebell EMOM Builder is a mobile app (iPhone first, Android later) that helps beginner to intermediate kettlebell enthusiasts structure effective **Every Minute on the Minute (EMOM)** workouts.
 
-The app comes with a **built-in exercise library** featuring the most popular beginner and intermediate kettlebell exercises. Each exercise is tagged with exactly one of five muscle groups:
-- Full Body  
+The app comes with a **built-in exercise library** featuring the most popular beginner and intermediate kettlebell exercises. Each exercise is tagged with exactly one of four muscle groups:
 - Upper Body  
 - Lower Body  
 - Core  
 - Posterior Chain  
 
-Users choose their target muscle groups, number of exercises per round, and total number of rounds. A smart generator then builds a workout that:
+Users choose a Full Body workout, or their target muscle groups, number of exercises per round, and total number of rounds. A smart generator then builds a workout that:
 - Covers all chosen groups evenly  
 - Arranges exercises in a scientifically informed pattern for effectiveness and safety  
 - Auto-generates a name (e.g. `"25 min Full Body + Upper Body"`)  
@@ -22,9 +21,29 @@ Users choose their target muscle groups, number of exercises per round, and tota
 With a single tap on “Start Workout,” a countdown begins and the **EMOM Timer** takes over. During the workout, the app displays the current and next exercise, the round and exercise counters, and remaining workout time. After completion, the app shows a motivational message and a short workout summary.
 
 ## Target Audience
-- Men and women aged **30+**, interested in structured kettlebell workouts.  
-- Especially appealing to **busy professionals and midlifters (40–55 years)** who value efficiency and clarity.  
-- Suitable for **beginners through intermediates** who don’t want to fuss with complex programming.
+
+Kettlebell EMOM Builder is built for busy adults who value clarity, structure, and longevity in their training.  
+Our audience spans both men and women who want efficient, intelligent strength workouts that fit real life — not influencer culture.
+
+### Primary Personas
+- **Alex — The Grounded Professional (35–45)**  
+  Time-crunched men and women balancing work, family, and limited mental bandwidth.  
+  They don’t want motivation hacks — they want a reliable system that helps them show up and train with purpose.  
+  *Mindset:* “Structure beats motivation.”  
+  *Tagline:* **Stronger through structure.**
+
+- **Claudia — The Adventurous Rebuilder (40–55)**  
+  Active midlifters who train to stay capable — to travel, hike, explore, and enjoy life fully.  
+  They’re not chasing aesthetics; they’re training for confidence, vitality, and freedom.  
+  *Mindset:* “I train so I can keep saying yes.”  
+  *Tagline:* **Train for decades, not for likes.**
+
+### Shared Mindset
+Both audiences believe in **structure over chaos, consistency over hype, and strength as a lifelong investment.**  
+They want a system that’s quick, trustworthy, and purposeful — helping them feel strong, capable, and in control without wasting time or overthinking.
+
+**Core Message:**  
+> *Structure creates strength. Strength sustains freedom.*
 
 ## Value Proposition
 - **Speed**: Create a new workout in under 60 seconds.  
@@ -45,7 +64,6 @@ With a single tap on “Start Workout,” a countdown begins and the **EMOM Time
 
 ## Out of Scope (MVP Backlog)
 - Progression and tracking.  
-- Audio cues and “3-2-1” countdown.  
 - Double kettlebell mode.  
 - Preset workouts.  
 - Social or sharing features.  
@@ -55,21 +73,57 @@ With a single tap on “Start Workout,” a countdown begins and the **EMOM Time
 - **Simple and functional**: not an “all-in-one fitness monster.”  
 - Clear USP: **“From app start to workout in 60 seconds.”**
 
-## Style Guide
-- **Theme**: Modern, slick dark theme.
-- **Color Palette**:
-  - **Background**: Dark grays (e.g., `bg-gray-900`, `bg-gray-800`).
-  - **Text**: Primarily white (`text-white`) and light grays (`text-gray-300`, `text-gray-400`).
-  - **Primary Accent**: A gradient from blue to indigo, used for the main title and primary action buttons (`from-blue-400 to-indigo-600`).
-  - **Secondary Accent**: A gradient from green to teal, used for the "Start Workout" button (`from-green-500 to-teal-600`).
-  - **Categorical Colors**: Unique background, text, and border colors for each selected muscle group to provide visual distinction.
-- **Typography**:
-  - **Font Family**: System sans-serif (`font-sans`).
-  - **Font Weight**: Bold and extra-bold weights are used for titles and calls-to-action to create a strong visual hierarchy.
-  - **Font Smoothing**: Antialiased for crisp, clear text rendering.
-- **Tone of Voice**: Clear, motivating, no fluff.
-- **Language**: English (international first, localization later).
-
 ## Legal
 - In-app disclaimer: “This app does not provide medical advice. Consult your physician before starting any exercise program.”  
 - Linked documents: Privacy Policy, Terms of Use.  
+
+## Workout generation algorithm and workout structure
+
+Workouts are generated by a deterministic, rule‑driven algorithm that prioritizes balance, safety, and variety. The generator uses a small domain model of exercises and movement patterns to assemble each round so that users get a complete, sensible EMOM experience every time.
+
+### Key concepts
+
+- **Movement categories**: every exercise is tagged with exactly one movement category used for round composition. The valid categories are:
+  - `squat` — bilateral squat & lunge patterns (e.g., Goblet Squat)
+  - `hinge` — deadlift, swing and hip‑dominant patterns (e.g., Russian Swing)
+  - `upperPush` — overhead and pressing movements (e.g., Push Press)
+  - `upperPull` — rows and pulling movements (e.g., Bent Row)
+  - `core` — anti‑rotation, anti‑extension, carries and core stability work (e.g., Russian Twist)
+
+- **Rounds and exercises**: The user selects exercises‑per‑round and number‑of‑rounds. The generator fills each round independently (and repeats the same per‑round length across all rounds). Single‑sided exercises are automatically expanded to left/right pairs back‑to‑back so that unilateral work is balanced.
+
+- **Required coverage**: For a given set of selected muscle groups, the generator maps those groups to a set of required movement categories. Examples:
+  - `Full Body` → all five categories
+  - `Upper Body` → `upperPush`, `upperPull` (plus `core` is always added)
+  - `Lower Body` → `squat`, `hinge` (plus `core`)
+  The generator attempts to include at least one exercise from each required movement category in every round.
+
+- **Heavy vs Core cadence**: Exercises have a `type` (e.g., `heavy` or `core`). The algorithm keeps a `heavySinceCore` counter and resets it whenever a core exercise is chosen. If two heavy exercises have already been placed consecutively (`heavySinceCore` ≥ 2), the generator prioritizes adding a core exercise next. This enforces short heavy streaks and regular interspersed core work for safety and recovery.
+
+- **Finisher movements**: Certain lower‑intensity moves — such as planks, mountain climbers, halos and overhead march — are tagged as *finishers* (a subset of `core`). A finisher always ends each round. Finishers provide active recovery and are less technically demanding than heavy lifts. If no finisher matches the user’s selected groups, the generator will use any available `core` exercise as the finisher.
+
+### Generation process (high level)
+
+1. **Filter the library**: Create a pool of exercises that match the user’s selected muscle groups.
+2. **Derive required categories**: Map the selection to required movement categories and always include `core` as required.
+3. **Reserve the finisher slot**: Reduce the available non‑finisher slots by one (e.g. if the user wants five exercises per round, only four are filled before the finisher).
+4. **Phase 1 — ensure coverage**: Attempt to place at least one exercise from each required movement category into the non‑finisher portion of the round (respecting slot counts for single‑sided movements).
+5. **Phase 2 — fill remaining slots**: Randomize the remaining pool and fill any leftover non‑finisher slots while respecting the `heavySinceCore` rule, single‑sided duplication (Left/Right), and available slot space.
+6. **Place the finisher**: Choose a finisher exercise from the dedicated finisher pool that fits the selected muscle groups, and place it in the last slot. If no finisher is available, fall back to a core exercise.
+7. **Repeat**: Repeat the above steps for each round until the specified number of rounds has been generated.
+
+### Fallbacks and constraints
+
+- If a required movement category has no available exercises, the generator skips that category but continues generating a sensible round from the remaining pool. The UI surfaces generation errors when no exercises can be produced at all.
+- Single‑sided exercises consume two slots; the generator avoids adding them when insufficient non‑finisher slots remain.
+- The algorithm uses a small randomness factor (shuffling) so repeated generates produce variations while maintaining the balancing rules.
+
+### Why this approach
+
+- **Predictable balance**: Every round is intentionally composed to cover movement patterns instead of relying solely on muscle‑group tags. A dedicated finisher slot ensures the session winds down with a less technical, lower‑intensity exercise.
+- **Safety and recovery**: The heavy/core cadence reduces long streaks of high‑intensity heavy moves, and the finisher acts as active recovery at the end of each round.
+- **Simplicity for users**: Users choose simple high‑level inputs (groups, counts, rounds) and get a complete, well‑balanced EMOM they can trust.
+
+# TODOS
+- [ ] Bigger fonts during workout
+- [ ] Workout Generator Overlay Modal
