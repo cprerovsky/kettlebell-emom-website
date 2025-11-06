@@ -1,9 +1,11 @@
 # Terms of Use — Kettlebell EMOM Builder
 
-**Last updated:** October 18, 2025
+**Last updated:** November 6, 2025
 
 ## 1. Acceptance of Terms  
-By accessing or using **Kettlebell EMOM Builder** (the “App” or “Service”), you agree to be bound by these Terms of Use (“Terms”). If you do not agree, please do not use the App.
+By accessing or using **Kettlebell EMOM Builder** (the "App" or "Service"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree, please do not use the App.
+
+When using our website, you also agree to our use of cookies and analytics as described in our Privacy Policy. You can manage your cookie preferences through the consent banner.
 
 ## 2. Use of the App  
 - You may use the App for your **personal**, **non-commercial** use only.  

@@ -1,11 +1,13 @@
 # Privacy Policy for Kettlebell EMOM Builder
 
-**Last updated: October 18, 2025**
+**Last updated: November 6, 2025**
 
 ## 1. Introduction
-We take your privacy seriously. This Privacy Policy explains how **Kettlebell EMOM Builder** (“we”, “our”, “us”) handles information when you use our mobile app, website, and related services (“Service”).
+We take your privacy seriously. This Privacy Policy explains how **Kettlebell EMOM Builder** ("we", "our", "us") handles information when you use our mobile app, website, and related services ("Service").
 
-At present, we do **not collect personal data** such as names, email addresses, or account information. We do store certain preferences and counters **locally on your device** to operate the free tier and remember your workout settings. This policy also outlines how we will handle data once we add features such as analytics or paid subscriptions in the future.
+We do **not collect personal data** such as names, email addresses, or account information through the app. We do store certain preferences and counters **locally on your device** to operate the free tier and remember your workout settings. 
+
+On our website, we use **Google Analytics** to understand visitor behavior and improve our service. You can opt out of analytics tracking at any time through our cookie consent banner.
 
 ## 2. Data Controller
 The data controller responsible for your data is:
@@ -15,27 +17,55 @@ Email: legal@kbemom.com
 
 ## 3. Data We Collect
 
-### a) Current data collection
-- **No personal accounts**: We do not currently collect names, email addresses, or login details.  
+### a) Mobile App — On-device storage only
+- **No personal accounts**: We do not collect names, email addresses, or login details.  
 - **No remote workout storage**: Workout data is not transmitted or stored on our servers.  
 - **On-device storage (Capacitor Preferences)**: We store the following information locally on your device to operate the App:  
 	- The number of free workouts used (to determine when the paywall applies).  
 	- Workout configuration preferences such as selected muscle groups, number of rounds, and number of exercises.  
 	This data does not leave your device and is under your control. Clearing app data or reinstalling the App may reset this information.
 
-### b) Planned features (future updates)
+### b) Website — Google Analytics
+We use **Google Analytics 4** on our website (kbemom.com) to understand how visitors use our site. This helps us improve the user experience and measure the effectiveness of our content.
+
+**What Google Analytics collects:**
+- **Page views and navigation**: Which pages you visit and how you navigate our site
+- **Referral sources**: How you arrived at our website (e.g., from a search engine, social media, or direct visit)
+- **Device and browser information**: Type of device, browser, screen resolution, and operating system
+- **Geographic location**: Approximate location based on IP address (city/country level only)
+- **Interaction events**: Clicks on download buttons and other key actions
+- **Session duration**: How long you spend on our website
+
+**IP Anonymization**: We have enabled IP anonymization, which means your full IP address is never stored by Google Analytics.
+
+**Cookies**: Google Analytics uses cookies to distinguish unique visitors and sessions. These cookies are only set with your consent. The main cookies used are:
+- `_ga`: Expires after 2 years, used to distinguish users
+- `_ga_<container-id>`: Expires after 2 years, used to persist session state
+
+**Legal basis**: We collect this data based on your **consent** (Article 6(1)(a) GDPR). You can withdraw consent at any time by declining or revoking cookie permissions.
+
+### c) Support Form
+When you submit a support request via our website, we collect:
+- Your name (as provided)
+- Your email address
+- Your message content
+
+This data is transmitted via FormSubmit.co and delivered to our email (contact@kbemom.com). We use this information solely to respond to your inquiry.
+
+**Legal basis**: **Legitimate interest** in providing customer support (Article 6(1)(f) GDPR).
+
+### d) Planned features (future updates)
 To improve the Service, we may add:
 - **Local workout storage**: Workout history saved only on your device.  
-- **Analytics**: Anonymous usage statistics (e.g. workouts generated, workout completion rates, session lengths).  
-- **Cookies on the website**: For analytics only (with user consent).  
-- **Payment data**: If we add or expand subscriptions or a paywall, payments will be processed via platform providers (e.g. Apple App Store / Google Play) or a trusted third-party payment provider (e.g. Stripe). We do not receive your full payment details.  
+- **Payment data**: Payments are processed via platform providers (e.g. Apple App Store / Google Play) or a trusted third-party payment provider (e.g. Stripe). We do not receive your full payment details.  
 
 We will update this Privacy Policy before introducing these features.
 
 ## 4. Use of Data
-If and when data is collected, it may be used to:
+We use collected data to:
 - Operate and improve the Service  
-- Understand how users engage with workouts and features  
+- Understand how visitors use our website (via Google Analytics)
+- Measure the effectiveness of our marketing and download conversion
 - Provide customer support and respond to inquiries  
 - Process payments for premium features (if applicable)  
 - Comply with legal obligations  
@@ -48,29 +78,59 @@ If you are located in the European Union, we process personal data under one or 
 - **Legal obligations**  
 
 ## 6. Data Retention
-- We do not currently store any personal data.  
-- If analytics are introduced, data will be stored in aggregated or anonymized form.  
-- If payments are introduced, billing records will be retained as required by law.  
-- Workout data and preferences saved locally on your device (including free workout counters and workout configuration) remain only on your device and are under your control.  
+- **Website analytics**: Google Analytics retains user and event data for 14 months by default. After this period, the data is automatically deleted.
+- **Support inquiries**: Email correspondence is retained as long as necessary to resolve your issue, typically up to 2 years.
+- **Billing records** (if applicable): Retained as required by law (typically 7-10 years in Austria).
+- **On-device app data**: Workout data and preferences saved locally on your device remain only on your device and are under your control.  
 
 ## 7. Your Rights
 You have the following rights under GDPR:
-- Access to your data  
-- Correction of inaccurate data  
-- Deletion of your data  
-- Restriction or objection to processing  
-- Data portability  
-- Withdrawal of consent at any time (for cookies/analytics)  
-- Complaint to the Austrian Data Protection Authority (Datenschutzbehörde, dsb@dsb.gv.at)  
+- **Access** to your data  
+- **Correction** of inaccurate data  
+- **Deletion** of your data  
+- **Restriction or objection** to processing  
+- **Data portability**  
+- **Withdrawal of consent** at any time (for cookies/analytics) — simply decline cookies in the banner or clear your browser's cookies
+- **Complaint** to the Austrian Data Protection Authority (Datenschutzbehörde, dsb@dsb.gv.at)  
 
-To exercise your rights, please contact: legal@kbemom.com.
+**To opt out of Google Analytics:**
+- Decline cookie consent when visiting our website, or
+- Use the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout)
+- Clear cookies in your browser settings
+
+To exercise other rights, please contact: legal@kbemom.com.
 
 ## 8. Data Sharing & Third-Party Services
-- Currently, no data is shared with third parties.  
-- In future, we may use third-party processors (e.g. Google Analytics, Stripe, Apple/Google in-app purchases). These services will be listed here once implemented.  
+
+We use the following third-party services that may process your data:
+
+### Google Analytics (Google LLC)
+- **Purpose**: Website analytics and usage statistics
+- **Data processed**: See section 3b above
+- **Location**: Data may be transferred to and processed in the United States
+- **Safeguards**: Google LLC is certified under the EU-U.S. Data Privacy Framework. We have also enabled IP anonymization.
+- **Privacy Policy**: [https://policies.google.com/privacy](https://policies.google.com/privacy)
+
+### FormSubmit.co
+- **Purpose**: Support form submissions
+- **Data processed**: Name, email, message content
+- **Privacy Policy**: [https://formsubmit.co/privacy](https://formsubmit.co/privacy)
+
+### Apple App Store / Google Play (if applicable)
+- **Purpose**: In-app purchases and subscription management
+- **Data processed**: Transaction data (we do not receive full payment details)
+
+We do not sell your personal data to third parties.
 
 ## 9. International Transfers
-If data is transferred outside the EU (e.g. via Google services), we will ensure adequate safeguards such as Standard Contractual Clauses.
+Data collected via Google Analytics may be transferred to and processed in the United States and other countries outside the European Economic Area (EEA). 
+
+We ensure adequate safeguards are in place:
+- Google LLC is certified under the **EU-U.S. Data Privacy Framework**
+- We have implemented **IP anonymization** to reduce the personal nature of the data
+- Google provides **Standard Contractual Clauses** for data transfers
+
+For more information, see Google's data transfer mechanisms: [https://business.safety.google/adsprocessorterms/](https://business.safety.google/adsprocessorterms/)
 
 ## 10. Security
 We implement appropriate technical and organizational measures to protect data. However, no system is completely secure, and we cannot guarantee absolute security.
