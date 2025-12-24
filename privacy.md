@@ -1,11 +1,13 @@
 # Privacy Policy for Kettlebell EMOM Builder
 
-**Last updated: November 6, 2025**
+**Last updated: December 24, 2025**
 
 ## 1. Introduction
 We take your privacy seriously. This Privacy Policy explains how **Kettlebell EMOM Builder** ("we", "our", "us") handles information when you use our mobile app, website, and related services ("Service").
 
-We do **not collect personal data** such as names, email addresses, or account information through the app. We do store certain preferences and counters **locally on your device** to operate the free tier and remember your workout settings. 
+We do **not collect personal data** such as names, email addresses, or account information through the app. We do store certain preferences and counters **locally on your device** to operate the free tier and remember your workout settings.
+
+We use **privacy-focused analytics** (TelemetryDeck) in the app to understand usage patterns and improve the Service. This analytics service is designed with privacy in mind and does not track personal information.
 
 On our website, we use **Google Analytics** to understand visitor behavior and improve our service. You can opt out of analytics tracking at any time through our cookie consent banner.
 
@@ -25,7 +27,28 @@ Email: legal@kbemom.com
 	- Workout configuration preferences such as selected muscle groups, number of rounds, and number of exercises.  
 	This data does not leave your device and is under your control. Clearing app data or reinstalling the App may reset this information.
 
-### b) Website — Google Analytics
+### b) Mobile App — Privacy-Focused Analytics (TelemetryDeck)
+We use **TelemetryDeck**, a privacy-first analytics service, to understand how the app is used and improve the user experience.
+
+**What TelemetryDeck collects:**
+- **Usage events**: App launches, workout generations, workout starts/completions, feature interactions
+- **Anonymous user identifier**: A randomly generated ID created on your device, cryptographically hashed before transmission
+- **App version and build number**: To identify which app version you're using
+- **Device information**: Operating system version (automatically collected by TelemetryDeck)
+- **Workout metadata**: Number of rounds, exercises, and muscle groups selected (no actual exercise names or personal workout data)
+
+**Privacy features:**
+- **No personal data**: We do not collect names, emails, IP addresses, or any personally identifiable information
+- **Hashed identifiers**: Your anonymous user ID is cryptographically hashed before leaving your device
+- **GDPR compliant**: TelemetryDeck is designed for GDPR compliance and does not use cookies or tracking pixels
+- **No cross-site tracking**: TelemetryDeck does not track you across other apps or websites
+- **European servers**: Data is stored on servers in the European Union (Germany)
+
+**Legal basis**: **Legitimate interest** in improving the app and understanding how it's used (Article 6(1)(f) GDPR). The data is anonymous and cannot be used to identify you.
+
+For more information: [TelemetryDeck Privacy Policy](https://telemetrydeck.com/privacy/)
+
+### c) Website — Google Analytics
 We use **Google Analytics 4** on our website (kbemom.com) to understand how visitors use our site. This helps us improve the user experience and measure the effectiveness of our content.
 
 **What Google Analytics collects:**
@@ -44,7 +67,7 @@ We use **Google Analytics 4** on our website (kbemom.com) to understand how visi
 
 **Legal basis**: We collect this data based on your **consent** (Article 6(1)(a) GDPR). You can withdraw consent at any time by declining or revoking cookie permissions.
 
-### c) Support Form
+### d) Support Form
 When you submit a support request via our website, we collect:
 - Your name (as provided)
 - Your email address
@@ -54,16 +77,10 @@ This data is transmitted via FormSubmit.co and delivered to our email (contact@k
 
 **Legal basis**: **Legitimate interest** in providing customer support (Article 6(1)(f) GDPR).
 
-### d) Planned features (future updates)
-To improve the Service, we may add:
-- **Local workout storage**: Workout history saved only on your device.  
-- **Payment data**: Payments are processed via platform providers (e.g. Apple App Store / Google Play) or a trusted third-party payment provider (e.g. Stripe). We do not receive your full payment details.  
-
-We will update this Privacy Policy before introducing these features.
-
 ## 4. Use of Data
 We use collected data to:
-- Operate and improve the Service  
+- Operate and improve the Service
+- Understand how the app is used and identify areas for improvement (via TelemetryDeck)  
 - Understand how visitors use our website (via Google Analytics)
 - Measure the effectiveness of our marketing and download conversion
 - Provide customer support and respond to inquiries  
@@ -78,6 +95,7 @@ If you are located in the European Union, we process personal data under one or 
 - **Legal obligations**  
 
 ## 6. Data Retention
+- **App analytics (TelemetryDeck)**: Anonymous usage data is retained for analysis purposes. You can request deletion of your anonymous user ID by contacting us.
 - **Website analytics**: Google Analytics retains user and event data for 14 months by default. After this period, the data is automatically deleted.
 - **Support inquiries**: Email correspondence is retained as long as necessary to resolve your issue, typically up to 2 years.
 - **Billing records** (if applicable): Retained as required by law (typically 7-10 years in Austria).
@@ -104,6 +122,13 @@ To exercise other rights, please contact: legal@kbemom.com.
 
 We use the following third-party services that may process your data:
 
+### TelemetryDeck (TelemetryDeck GmbH)
+- **Purpose**: Privacy-focused app analytics
+- **Data processed**: See section 3b above
+- **Location**: Data is stored on servers in the European Union (Germany)
+- **Safeguards**: GDPR-compliant service, cryptographic hashing of user identifiers
+- **Privacy Policy**: [https://telemetrydeck.com/privacy/](https://telemetrydeck.com/privacy/)
+
 ### Google Analytics (Google LLC)
 - **Purpose**: Website analytics and usage statistics
 - **Data processed**: See section 3b above
@@ -123,9 +148,11 @@ We use the following third-party services that may process your data:
 We do not sell your personal data to third parties.
 
 ## 9. International Transfers
-Data collected via Google Analytics may be transferred to and processed in the United States and other countries outside the European Economic Area (EEA). 
+Data collected via Google Analytics may be transferred to and processed in the United States and other countries outside the European Economic Area (EEA).
 
-We ensure adequate safeguards are in place:
+App analytics via TelemetryDeck are stored within the European Union (Germany) and do not involve international data transfers.
+
+For Google Analytics, we ensure adequate safeguards are in place:
 - Google LLC is certified under the **EU-U.S. Data Privacy Framework**
 - We have implemented **IP anonymization** to reduce the personal nature of the data
 - Google provides **Standard Contractual Clauses** for data transfers
