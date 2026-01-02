@@ -2,6 +2,7 @@
 import '@/styles/global.css'
 import '@/styles/typography.css'
 
+import Analytics from '@/components/Analytics.astro'
 import FloatingSidebar from '@/components/FloatingSidebar.astro'
 import Footer from '@/components/Footer.astro'
 import Head from '@/components/Head.astro'
@@ -103,5 +104,6 @@ const { class: className, hideFloatingSidebar = false } = Astro.props
     </main>
     {false && !hideFloatingSidebar && <FloatingSidebar />}
     <Footer />
+    <Analytics />
   </body>
 </html>

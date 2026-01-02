@@ -22,9 +22,10 @@ const ogImage = image || (cleanPathname ? new URL(`/og${cleanPathname}.png`, Ast
 
 <head>
   <script is:inline>
+    // Always force dark theme
     (function () {
-      const theme = localStorage.getItem('theme') || 'dark'
-      document.documentElement.setAttribute('data-theme', theme)
+      document.documentElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
     })()
   </script>
 

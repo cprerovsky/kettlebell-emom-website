@@ -1,310 +1,213 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
-import Link from '@/components/Link.astro'
-import PageHead from '@/components/PageHead.astro'
-import Skills from '@/components/react/Skills'
-import { ErrorBoundary } from '@/components/react/ErrorBoundary'
-import { buttonVariants } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
-import { Icon } from 'astro-icon/components'
-import { getRecentPosts } from '@/lib/data-utils'
-import { cn } from '@/lib/utils'
-import { SOCIAL_LINKS, ICON_MAP, SITE } from '@/consts'
-import type { SocialLink } from '@/types'
+import PageHead from '@/components/PageHead.astro'
+import { SITE } from '@/consts'
 
-// Error handling for fetching recent posts
-let latestPosts: Awaited<ReturnType<typeof getRecentPosts>> = []
-try {
-  latestPosts = await getRecentPosts(2)
-} catch (error) {
-  console.error('Error fetching recent posts:', error)
-}
-
-// Person Schema for homepage SEO
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": SITE.title,
-  "url": SITE.href,
-  "description": SITE.description
-}
-
-// Organization Schema
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": SITE.title,
-  "url": SITE.href,
-  "description": SITE.description
-}
-
-// Website Schema
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": SITE.title,
-  "url": SITE.href,
-  "description": SITE.description,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${SITE.href}/blog?q={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
-  }
-}
-
-// Experience Timeline - Customize with your own experience
-type ExperienceItem = {
-  role: string
-  company: string
-  period: string
-  current?: boolean
-  icon: string
-  key: string
-}
-
-// Customize your experience here
-const experience: ExperienceItem[] = [
-  {
-    role: 'Your Current Role',
-    company: 'Current Company',
-    period: '2022 - Present',
-    current: true,
-    icon: 'lucide:briefcase',
-    key: 'Brief description of your current role and key achievements • Add more details about your responsibilities and accomplishments'
-  },
-  {
-    role: 'Previous Role',
-    company: 'Previous Company',
-    period: '2020 - 2022',
-    icon: 'lucide:server',
-    key: 'Description of your previous role and achievements • Highlight key projects or responsibilities you had in this position'
-  },
-  {
-    role: 'Earlier Role',
-    company: 'Earlier Company',
-    period: '2018 - 2020',
-    icon: 'lucide:code',
-    key: 'Description of your earlier role and achievements • Show your career progression and growth over time'
-  },
-]
+const pageTitle = `${SITE.title} — Stronger through Structure`
+const pageDescription = SITE.description
 ---
-<Layout class="max-w-3xl" transition:persist="home-layout">
-  <PageHead slot="head" title={SITE.title} fullTitle={true} />
-  
-  <!-- Schema Markup for SEO -->
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-  
+
+<Layout>
+  <PageHead slot="head" title={pageTitle} description={pageDescription} />
+
   <!-- Hero Section -->
-  <section class="relative overflow-hidden rounded-xl border" style="min-height: clamp(280px, 40vh, 400px);">
-    <!-- Gradient Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" aria-hidden="true"></div>
-    
-    <!-- Content -->
-    <div class="relative z-10 p-8 md:p-12">
-      <div class="flex flex-col gap-8">
-        <!-- Main Content -->
-        <div class="flex-1 min-w-0 space-y-6">
-          <!-- Heading -->
-          <div class="space-y-4" style="min-height: clamp(120px, 20vh, 180px);">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl leading-[1.1] font-bold tracking-tight" style="font-variation-settings: 'wght' 700;">
-              Welcome to<br class="hidden sm:block" />
-              <span class="text-primary">{SITE.title}</span>
-            </h1>
-            <p class="text-muted-foreground mt-4 leading-relaxed text-base md:text-lg max-w-xl" style="min-height: 3rem;">
-              {SITE.description}
-            </p>
-          </div>
-          
-          <!-- CTA Buttons -->
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <Link href="/blog" class={buttonVariants({ variant: 'default', size: 'lg' })}>
-              Read the blog
-              <Icon name="lucide:arrow-right" class="size-4" />
-            </Link>
-            <Link href="/about" class={buttonVariants({ variant: 'outline', size: 'lg' })}>
-              About me
-            </Link>
-          </div>
-          
-          <!-- Social Icons -->
-          <div class="pt-2">
-            <ul class="flex flex-wrap items-center gap-2" role="list">
-              {SOCIAL_LINKS.map(({ href, label }: SocialLink) => (
-                <li>
-                  <Link
-                    href={href}
-                    aria-label={label}
-                    title={label}
-                    class={buttonVariants({ variant: 'outline', size: 'icon' }) + ' backdrop-blur-sm bg-background/80'}
-                    external={href.startsWith('http') || href.startsWith('mailto:')}
-                  >
-                    <Icon
-                      name={
-                        ICON_MAP[label as keyof typeof ICON_MAP] ||
-                        'lucide:message-circle-question'
-                      }
-                      class="size-4"
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Timeline -->
-  <section class="mt-8">
-    <div class="mb-6">
-      <h2 class="text-2xl font-semibold mb-2">Experience</h2>
-      <p class="text-sm text-muted-foreground">
-        Professional journey and achievements
-      </p>
-    </div>
-    
-    <div class="space-y-6">
-      {experience.map((exp, index) => (
-        <div class="relative">
-          {index < experience.length - 1 && (
-            <div class="absolute left-[11px] top-8 bottom-0 w-px bg-border" aria-hidden="true"></div>
-          )}
-          
-          <div class="flex gap-4">
-            <div class={`relative flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-background z-10 ${
-              exp.current ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : "bg-muted text-muted-foreground"
-            }`}>
-              <Icon name={exp.icon} class="size-3.5" />
-            </div>
-            
-            <div class="flex-1 pb-2 min-w-0">
-              <div class="mb-1">
-                <h3 class="font-semibold text-lg leading-tight">{exp.role}</h3>
-                <p class="text-sm text-muted-foreground">
-                  {exp.company} · {exp.period}
-                </p>
-              </div>
-              <p class="text-sm text-muted-foreground/90 leading-relaxed mt-2">
-                {exp.key}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Skills & Technologies (Optional) -->
-  <section class="mt-12">
-    <div class="mb-6">
-      <h2 class="text-2xl font-semibold mb-2">Skills & Technologies</h2>
-      <p class="text-sm text-muted-foreground">
-        Technologies and tools I work with
-      </p>
-    </div>
-    <ErrorBoundary client:load transition:persist="skills-error-boundary">
-      <Skills client:load transition:persist="skills-section" />
-    </ErrorBoundary>
-  </section>
-
-  <!-- Latest from the blog -->
-  {latestPosts && latestPosts.length > 0 && (
-    <section class="mt-12">
-      <div class="mb-6 flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-semibold mb-2">Latest from the blog</h2>
-          <p class="text-sm text-muted-foreground">Recent insights and articles</p>
-        </div>
-        <Link 
-          href="/blog" 
-          class={buttonVariants({ variant: 'ghost' }) + ' hidden sm:flex items-center gap-1.5'}
-        >
-          View all
-          <Icon name="lucide:arrow-right" class="size-4" />
-        </Link>
-      </div>
-      
-      <div class="space-y-2">
-        {latestPosts.map((post) => (
-          <article>
-            <BlogCard entry={post} />
-          </article>
-        ))}
-      </div>
-      
-      <article class="mt-2 sm:hidden">
-        <Link
-          href="/blog"
-          aria-label="View all blog posts"
-          class="group block py-3 px-2 rounded-md border border-border/50 bg-muted/20 hover:bg-muted/40 hover:border-primary/30 transition-all duration-200"
-        >
-          <div class="flex items-center gap-3">
-            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-center group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors" aria-hidden="true">
-              <Icon name="lucide:library" class="size-5 text-primary" />
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2">
-                <span class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                  View all posts
-                </span>
-                <Icon name="lucide:arrow-right" class="size-4 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all shrink-0" aria-hidden="true" />
-              </div>
-              <p class="text-xs text-muted-foreground mt-0.5">
-                Explore all articles and tutorials
-              </p>
-            </div>
-          </div>
-        </Link>
-      </article>
-    </section>
-  )}
-
-  <!-- CTA Section -->
-  <section class="mt-12 sm:mt-24">
-    <div class="max-w-2xl mx-auto">
-      <div class="mb-12 relative">
-        <div class="absolute inset-0 flex items-center" aria-hidden="true">
-          <div class="w-full border-t border-border"></div>
-        </div>
-        <div class="relative flex justify-center">
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-background border border-border shadow-sm">
-            <span class="relative flex h-1.5 w-1.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
-            </span>
-            <span class="text-xs font-medium text-muted-foreground uppercase tracking-wider">Available</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center space-y-6">
-        <div class="space-y-2">
-          <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground leading-tight">
-            Let's connect
-          </h2>
-        </div>
-        <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
-          Have questions or want to collaborate? Feel free to reach out!
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-foreground">
+          Stronger through structure.
+        </h1>
+        <p class="mt-4 text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent">
+          Smart kettlebell workouts built in seconds.
         </p>
-        <div class="pt-4">
-          {SOCIAL_LINKS.find(link => link.label === 'Email') && (
-            <Link 
-              href={SOCIAL_LINKS.find(link => link.label === 'Email')!.href} 
-              class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-foreground text-background text-base font-medium hover:bg-foreground/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            >
-              <Icon name="lucide:mail" class="size-4" />
-              <span>Get in touch</span>
-              <Icon name="lucide:arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          )}
+        <p class="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
+          When the plan's built, you just show up. Generate a balanced EMOM in under 60 seconds and press start. Calm, clear, and efficient: strength through systems, not hype.
+        </p>
+
+        <!-- Phone Mockup Section -->
+        <div class="flex justify-center mt-12 mb-8">
+          <div class="bg-secondary p-2 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl border border-border">
+            <div id="screenshot-container" class="relative w-64 h-auto sm:w-80 bg-background rounded-xl sm:rounded-2xl overflow-hidden">
+              <img src="/media/screenshot-1.png" alt="App screenshot showing the workout generation screen" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-100">
+              <img src="/media/screenshot-2.png" alt="App screenshot showing the EMOM timer in action" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-0 absolute top-0 left-0">
+              <img src="/media/screenshot-3.png" alt="App screenshot showing the workout completion screen" class="screenshot w-full h-auto transition-opacity duration-500 ease-in-out opacity-0 absolute top-0 left-0">
+            </div>
+          </div>
         </div>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a 
+            href="https://apps.apple.com/at/app/kettlebell-emom/id6753604738?l=en-GB" 
+            class="bg-gradient-to-r from-blue-400 to-indigo-600 hover:from-blue-500 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 inline-flex items-center"
+          >
+            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.463 8.999l-4.95.001c-1.534 0-2.193.9-2.213 2.492l-.001 5.05c0 1.593.68 2.493 2.214 2.493l4.95-.001c1.534 0 2.213-.9 2.213-2.493v-5.05c0-1.592-.68-2.492-2.213-2.492zm-7.013 5.051c0-2.58 1.48-4.993 3.763-4.993h1.5c.414 0 .75.336.75.75s-.336.75-.75.75h-1.5c-1.534 0-2.263 1.593-2.263 3.493s.73 3.494 2.263 3.494h1.5c.414 0 .75.336.75.75s-.336.75-.75.75h-1.5c-2.283 0-3.763-2.413-3.763-4.994zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
+            </svg>
+            <span>Download on the App&nbsp;Store</span>
+          </a>
+        </div>
+        <p class="mt-3 text-sm text-muted-foreground">Strong today. Stronger tomorrow. Built for decades.</p>
+        <p class="mt-1 text-sm text-muted-foreground">iPhone first. Android coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition Section -->
+  <section id="features" class="py-20 sm:py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-foreground">From app start to workout in 60 seconds</h2>
+        <p class="mt-4 text-lg text-muted-foreground">No hype. No chaos. Just a plan you can start now.</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Feature 1: Speed -->
+        <div class="bg-secondary p-8 rounded-xl border border-border">
+          <div class="bg-gradient-to-r from-blue-400 to-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="mt-6 text-xl font-bold text-foreground">Speed</h3>
+          <p class="mt-2 text-muted-foreground">Create a new, perfectly balanced workout in under 60 seconds. Select your muscle groups, set your rounds, and go.</p>
+        </div>
+
+        <!-- Feature 2: Clarity -->
+        <div class="bg-secondary p-8 rounded-xl border border-border">
+          <div class="bg-gradient-to-r from-blue-400 to-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+            </svg>
+          </div>
+          <h3 class="mt-6 text-xl font-bold text-foreground">Clarity</h3>
+          <p class="mt-2 text-muted-foreground">Our smart generator arranges exercises in a scientifically informed pattern for maximum effectiveness and safety. No more guesswork.</p>
+        </div>
+
+        <!-- Feature 3: Structure -->
+        <div class="bg-secondary p-8 rounded-xl border border-border">
+          <div class="bg-gradient-to-r from-blue-400 to-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="mt-6 text-xl font-bold text-foreground">Structure</h3>
+          <p class="mt-2 text-muted-foreground">A built-in EMOM timer, clear progress display, and a smooth workout flow keep you focused and in the zone from start to finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works Section -->
+  <section id="how-it-works" class="py-20 sm:py-24 bg-muted/30">
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-foreground">Simple, Fast, Effective.</h2>
+          <p class="mt-4 text-lg text-muted-foreground">Get a great workout in three simple steps.</p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center w-20 h-20 border-2 border-blue-400 rounded-full text-blue-400 text-3xl font-bold">
+              1
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-foreground">Choose</h3>
+            <p class="mt-2 text-muted-foreground">Select your target muscle groups, number of exercises, and total rounds.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center w-20 h-20 border-2 border-indigo-500 rounded-full text-indigo-500 text-3xl font-bold">
+              2
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-foreground">Generate</h3>
+            <p class="mt-2 text-muted-foreground">The app instantly builds a balanced workout with an auto-generated name.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center w-20 h-20 border-2 border-green-500 rounded-full text-green-500 text-3xl font-bold">
+              3
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-foreground">Train</h3>
+            <p class="mt-2 text-muted-foreground">Tap "Start Workout" and follow the guided EMOM timer to completion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section id="core-features" class="py-20 sm:py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-foreground">Everything You Need, Nothing You Don't</h2>
+          <p class="mt-4 text-lg text-muted-foreground">Designed for clarity and focus, so every workout feels effortless to start.</p>
+        </div>
+        <ul class="mt-12 space-y-4">
+          <li class="flex items-start p-4 bg-secondary rounded-lg">
+            <svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold text-foreground">Curated Exercise Library</h4>
+              <p class="text-muted-foreground">Beginner and intermediate-friendly kettlebell exercises, tagged by muscle group.</p>
+            </div>
+          </li>
+          <li class="flex items-start p-4 bg-secondary rounded-lg">
+            <svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold text-foreground">Smart Workout Generator</h4>
+              <p class="text-muted-foreground">Creates balanced routines that cover your chosen muscle groups evenly.</p>
+            </div>
+          </li>
+          <li class="flex items-start p-4 bg-secondary rounded-lg">
+            <svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold text-foreground">Integrated EMOM Timer</h4>
+              <p class="text-muted-foreground">Displays current/next exercise, round counters, and total time remaining. Includes pause and resume.</p>
+            </div>
+          </li>
+          <li class="flex items-start p-4 bg-secondary rounded-lg">
+            <svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold text-foreground">Motivational Feedback</h4>
+              <p class="text-muted-foreground">Auto-generated workout names and a motivating completion screen keep you engaged.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const screenshots = document.querySelectorAll('#screenshot-container .screenshot');
+    if (screenshots.length <= 1) return;
+
+    let currentIndex = 0;
+    const rotationInterval = 3000; // 3 seconds
+
+    setInterval(() => {
+      // Fade out the current screenshot
+      screenshots[currentIndex].classList.remove('opacity-100');
+      screenshots[currentIndex].classList.add('opacity-0');
+
+      // Update the index to the next screenshot, looping back to the start
+      currentIndex = (currentIndex + 1) % screenshots.length;
+
+      // Fade in the new screenshot
+      screenshots[currentIndex].classList.remove('opacity-0');
+      screenshots[currentIndex].classList.add('opacity-100');
+    }, rotationInterval);
+  });
+</script>

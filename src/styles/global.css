@@ -26,26 +26,7 @@
 }
 
 :root {
-  --background: hsl(0 0% 100%);
-  --header-background: hsl(0 0% 89%);
-  --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(214 95% 52%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(0 0% 80.1%);
-  --secondary-foreground: hsl(0 0% 9%);
-  --muted: hsl(0 0% 80.1%);
-  --muted-foreground: hsl(0 0% 40%); /* Improved contrast from 45.1% to 40% */
-  --accent: hsl(217 91% 96%);
-  --accent-foreground: hsl(217 91% 20%);
-  --additive: hsl(112 50% 36%);
-  --additive-foreground: hsl(0 0% 9%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 89.8%);
-  --ring: hsl(214 95% 52%);
-}
-
-[data-theme='dark'] {
+  /* Always use dark theme */
   --background: hsl(222 47% 11%);        /* gray-900: #111827 */
   --header-background: hsl(217 33% 17%); /* gray-800: #1F2937 */
   --foreground: hsl(214 32% 91%);        /* gray-300: #D1D5DB */
@@ -71,11 +52,7 @@
   }
 
   html {
-    @apply bg-background text-foreground scheme-light;
-  }
-
-  html[data-theme='dark'] {
-    @apply scheme-dark;
+    @apply bg-background text-foreground scheme-dark;
   }
 
   /* Prevent layout shifts during view transitions */
