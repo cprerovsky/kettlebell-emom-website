@@ -79,117 +79,91 @@ This plan outlines the step-by-step migration of the Kettlebell EMOM website fro
 
 ---
 
-## Phase 2: Theme Integration & Configuration
+## Phase 2: Theme Integration & Configuration ✅
 
-### Step 2.1: Copy merox-erudite Structure
+### Step 2.1: Copy merox-erudite Structure ✅
 **Duration:** 30 minutes  
 **Prerequisites:** Phase 1 complete
 
-- [ ] Copy from `~/temp-astro/merox-erudite/` to your repo:
-  - `src/components/` → Core UI components
-  - `src/layouts/` → Page layouts
-  - `src/content/` → Content collections config (blog, authors)
-  - `src/lib/` → Utility functions
-  - `src/styles/` → Global styles
-  - `src/consts.ts` → Site configuration
-- [ ] Copy `.env.example` → `.env` for local development
-- [ ] Copy `tailwind.config.mjs` (if provided in theme)
-- [ ] Update `astro.config.mjs` to match theme requirements
+- [x] Copy from `~/temp-astro/merox-erudite/` completed in Phase 1:
+  - `src/components/` → Core UI components ✅
+  - `src/layouts/` → Page layouts ✅
+  - `src/content/` → Content collections config ✅
+  - `src/lib/` → Utility functions ✅
+  - `src/styles/` → Global styles ✅
+  - `src/consts.ts` → Site configuration ✅
+- [x] Copy `.env.example` → `.env` for local development ✅
+- [x] All configuration files copied in Phase 1 ✅
 
-**Verification:** Project builds without errors: `npm run build`
+**Verification:** ✅ Project builds and runs without errors
 
 ---
 
-### Step 2.2: Configure Site Metadata
+### Step 2.2: Configure Site Metadata ✅
 **Duration:** 15 minutes  
 **Prerequisites:** Step 2.1 complete
 
 Edit `src/consts.ts`:
 
-- [ ] Set `SITE_TITLE`: "Kettlebell EMOM Builder"
-- [ ] Set `SITE_DESCRIPTION`: "Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds."
-- [ ] Set `SITE_URL`: "https://kbemom.com"
-- [ ] Set author information
-- [ ] Configure social links (if applicable)
-- [ ] Review and adjust any other site-wide constants
+- [x] Set `SITE.title`: "Kettlebell EMOM Builder" ✅
+- [x] Set `SITE.description`: "Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds." ✅
+- [x] Set `SITE.href`: "https://kbemom.com" ✅
+- [x] Set `SITE.author`: "kettlebell-emom" ✅
+- [x] Configure navigation links: Home, Blog, Support ✅
+- [x] Update social links: Email, RSS ✅
 
-**Verification:** Metadata appears correctly when building site
+**Verification:** ✅ Metadata displays correctly in site
 
 ---
 
-### Step 2.3: Adapt Brand Colors & Typography
+### Step 2.3: Adapt Brand Colors & Typography ✅
 **Duration:** 45 minutes  
 **Prerequisites:** Step 2.2 complete
 
-**Tailwind Configuration** (`tailwind.config.mjs`):
-
-- [ ] Update color palette to match brand guide:
-  ```javascript
-  colors: {
-    gray: {
-      900: '#111827',
-      800: '#1F2937',
-      700: '#374151',
-      // ... existing grays
-    },
-    blue: {
-      400: '#60A5FA',
-      // ... existing blues
-    },
-    indigo: {
-      600: '#4F46E5',
-    },
-    green: {
-      500: '#10B981',
-    },
-    teal: {
-      600: '#0D9488',
-    },
-  }
-  ```
-
-- [ ] Set font family to Inter:
-  ```javascript
-  fontFamily: {
-    sans: ['Inter', 'system-ui', 'sans-serif'],
-  }
-  ```
-
 **Global Styles** (`src/styles/global.css`):
 
-- [ ] Import Inter font from Google Fonts:
-  ```css
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-  ```
+- [x] Import Inter font from Google Fonts ✅
+- [x] Replace Geist fonts with Inter in font-family ✅
+- [x] Remove Geist @font-face declarations ✅
+- [x] Updated dark theme colors to match brand:
+  - Background: `hsl(222 47% 11%)` - gray-900 (#111827) ✅
+  - Header background: `hsl(217 33% 17%)` - gray-800 (#1F2937) ✅
+  - Foreground: `hsl(214 32% 91%)` - gray-300 (#D1D5DB) ✅
+  - Primary: `hsl(213 94% 68%)` - blue-400 (#60A5FA) ✅
+  - Accent: `hsl(231 83% 61%)` - indigo-600 (#4F46E5) ✅
+  - Additive: `hsl(153 47% 49%)` - green-500 (#10B981) ✅
+  - Muted foreground: gray-400 (#9CA3AF) ✅
+- [x] Set dark theme as permanent default ✅
+- [x] Fixed CSS import order ✅
 
-- [ ] Set dark theme as default (bg-gray-900, text-gray-300)
-- [ ] Define gradient utilities for brand gradients
-
-**Verification:** Dev server shows Inter font and brand colors
+**Verification:** ✅ Site displays with Inter font and brand colors
 
 ---
 
-### Step 2.4: Customize Theme Components
+### Step 2.4: Customize Theme Components ✅
 **Duration:** 60 minutes  
 **Prerequisites:** Step 2.3 complete
 
 **Header Component:**
-- [ ] Review `src/components/Header.astro` (or similar)
-- [ ] Simplify navigation (Home, Blog, Support)
-- [ ] Remove unnecessary theme features (if any)
-- [ ] Match styling to brand (dark bg, white text)
+- [x] Updated `src/components/Header.astro` ✅
+- [x] Navigation simplified to: Home, Blog, Support ✅
+- [x] Removed logo images, added gradient text title ✅
+- [x] Applied blue-400 to indigo-600 gradient to title ✅
+- [x] Removed theme toggle button ✅
+- [x] Fixed SITE import ✅
 
 **Footer Component:**
-- [ ] Review `src/components/Footer.astro`
-- [ ] Add links to: Terms, Privacy, Imprint, Support
-- [ ] Add copyright: "© 2025 kbemom.com. All rights reserved."
-- [ ] Add disclaimer text (see current footer in index.html)
+- [x] Updated `src/components/Footer.astro` ✅
+- [x] Added legal links: Privacy, Terms, Imprint, Support ✅
+- [x] Copyright displays: "© 2026 Kettlebell EMOM Builder. All rights reserved." ✅
+- [x] Added fitness disclaimer text ✅
 
-**Homepage Layout:**
-- [ ] Decide whether to use theme's blog listing or create custom homepage
-- [ ] Plan to create custom landing page (Phase 3)
+**Theme Settings:**
+- [x] Set dark theme as permanent default (no system detection) ✅
+- [x] Removed theme toggle functionality ✅
+- [x] Site always displays in dark mode ✅
 
-**Verification:** Header and footer display correctly with brand styling
+**Verification:** ✅ Header and footer display correctly with brand styling, permanent dark mode active
 
 ---
 
