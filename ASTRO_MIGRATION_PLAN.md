@@ -498,7 +498,9 @@ Test in multiple browsers:
 
 ## Phase 6: Deployment Setup
 
-### Step 6.1: Choose Hosting Platform
+**Status:** ✅ IN PROGRESS - GitHub Pages already configured, manual deployment process
+
+### Step 6.1: Choose Hosting Platform ✅ COMPLETE
 **Duration:** 15 minutes  
 **Prerequisites:** Phase 5 complete
 
@@ -513,83 +515,117 @@ Test in multiple browsers:
    - Free tier available
    - GitHub integration
 
-3. **GitHub Pages**
+3. **GitHub Pages** ✅ CHOSEN
    - Free for public repos
-   - Requires GitHub Actions setup
-   - Good for static sites
+   - Manual deployment for blog post control
+   - Custom domain: kbemom.com
 
 **Decision:**
-- [ ] Choose hosting platform based on needs
-- [ ] Consider: custom domain support, build minutes, bandwidth
+- [x] Choose hosting platform based on needs ✅
+- [x] Platform: GitHub Pages (already set up) ✅
+- [x] Repository: cprerovsky/kettlebell-emom-website ✅
 
-**Verification:** Platform account created
+**Verification:** Platform account created ✅
 
 ---
 
-### Step 6.2: Configure Build Settings
+### Step 6.2: Configure Build Settings ✅ COMPLETE
 **Duration:** 20 minutes  
 **Prerequisites:** Step 6.1 complete
 
-**For Vercel/Netlify:**
-- [ ] Connect GitHub repository
-- [ ] Set build command: `npm run build`
-- [ ] Set publish directory: `dist`
-- [ ] Set Node.js version: 18+ (in `package.json` engines field)
-- [ ] Add environment variables (if any, e.g., for analytics)
-
 **For GitHub Pages:**
-- [ ] Configure `astro.config.mjs` for GitHub Pages:
-  ```javascript
+- [x] Configure `astro.config.ts` for GitHub Pages ✅
+  ```typescript
   export default defineConfig({
     site: 'https://kbemom.com',
     base: '/',
   });
   ```
+- [x] Build command: `npm run build` ✅
+- [x] Publish directory: `dist/` ✅
+- [x] Environment variables configured in `.env` ✅
+  - Google Analytics: G-FX1ZDC9DSW
+  - CNAME: kbemom.com
 
-**Verification:** Settings saved, ready for first deployment
+**Verification:** Settings saved, ready for first deployment ✅
 
 ---
 
-### Step 6.3: First Deployment
-**Duration:** 30 minutes  
+### Step 6.3: Manual Deployment to GitHub Pages
+**Duration:** 15 minutes  
 **Prerequisites:** Step 6.2 complete
 
-- [ ] Push astro-migration branch to GitHub
-- [ ] Trigger deployment (automatic or manual)
-- [ ] Monitor build logs for errors
-- [ ] Check deployment preview URL
-- [ ] Test deployed site thoroughly
-- [ ] Fix any deployment-specific issues
+**Manual Deployment Process:**
+1. Build the site locally:
+   ```bash
+   npm run build
+   ```
+2. Verify build output in `dist/` directory (20 pages, 14MB)
+3. Deploy to GitHub Pages:
+   ```bash
+   # Option A: Push dist folder to gh-pages branch
+   git subtree push --prefix dist origin gh-pages
+   
+   # Option B: Copy dist contents to root on gh-pages branch
+   git checkout gh-pages
+   cp -r dist/* .
+   git add .
+   git commit -m "Deploy: [description]"
+   git push origin gh-pages
+   git checkout astro
+   ```
+4. Wait for GitHub Pages to update (~1-2 minutes)
+5. Test deployed site at kbemom.com
+
+**Deployment Checklist:**
+- [ ] Run `npm run build` successfully
+- [ ] Verify no errors in build output
+- [ ] Check `dist/` contains all 20 pages
+- [ ] Deploy to gh-pages branch
+- [ ] Test site at https://kbemom.com
+- [ ] Verify all pages load correctly
+- [ ] Check analytics tracking works
+- [ ] Test mobile responsiveness
+- [ ] Verify blog posts display correctly
 
 **Common issues to check:**
-- Path references (use `/` prefix for public assets)
-- Environment variables
-- API routes (if any)
+- Path references (all use `/` prefix for public assets) ✅
+- Environment variables (analytics) ✅
+- CNAME file in dist/ ✅
 
-**Verification:** Site successfully deploys and is accessible
+**Verification:** Site successfully deploys and is accessible at kbemom.com
 
 ---
 
-### Step 6.4: Custom Domain Setup
+### Step 6.4: Custom Domain Setup ✅ COMPLETE
 **Duration:** 20 minutes  
 **Prerequisites:** Step 6.3 complete
 
-- [ ] Add custom domain in hosting platform: `kbemom.com`
-- [ ] Configure DNS records:
-  - For Vercel: Add A/CNAME records as instructed
-  - For Netlify: Add A/CNAME records as instructed
-  - For GitHub Pages: Configure CNAME and A records
-- [ ] Wait for DNS propagation (can take up to 48 hours)
-- [ ] Enable HTTPS/SSL (usually automatic)
-- [ ] Test site at `https://kbemom.com`
+- [x] Custom domain configured: `kbemom.com` ✅
+- [x] CNAME file in public/ directory ✅
+- [x] DNS records configured for GitHub Pages ✅
+- [x] HTTPS/SSL enabled ✅
 
-**Verification:** Site loads correctly at custom domain with HTTPS
+**Verification:** Site loads correctly at custom domain with HTTPS ✅
 
 ---
 
 ## Phase 7: GitHub Actions for Automated Builds
 
-### Step 7.1: Create GitHub Actions Workflow
+**Status:** ⏸️ DEFERRED - Manual deployment preferred for blog post control
+
+**Rationale:** Manual review of blog posts before deployment ensures quality control. Automated deployment via GitHub Actions will be added in a future phase when workflow is established.
+
+**Current Process:** Manual deployment allows review of each blog post before going live.
+
+**Future Implementation:** When ready for automation, implement GitHub Actions workflow to:
+- Auto-deploy on push to `main` branch
+- Optional: Deploy previews for pull requests
+- Optional: Add approval gates for blog posts
+
+---
+
+### Step 7.1: Create GitHub Actions Workflow ⏸️ DEFERRED
 **Duration:** 30 minutes  
 **Prerequisites:** Phase 6 complete, GitHub Pages hosting chosen
 
