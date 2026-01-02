@@ -1,0 +1,71 @@
+import type { IconMap, SocialLink, Site } from '@/types'
+
+export const SITE: Site = {
+  title: 'Kettlebell EMOM Builder',
+  description:
+    'Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds.',
+  href: 'https://kbemom.com',
+  author: 'kettlebell-emom',
+  locale: 'en-US',
+  featuredPostCount: 2,
+  postsPerPage: 6,
+}
+
+// Google Analytics
+// Configure via environment variable: PUBLIC_GOOGLE_ANALYTICS_ID
+export const ANALYTICS = {
+  google: import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID || '',
+}
+
+// Brevo Newsletter
+// Get your API key from https://app.brevo.com/settings/keys/api
+// Set it as an environment variable: BREVO_API_KEY=your-api-key
+// Optional: Set BREVO_LIST_ID to automatically add subscribers to a specific list
+// Optional: Set BREVO_TEMPLATE_ID for double opt-in confirmation email (default: 5)
+export const BREVO = {
+  apiKey: import.meta.env.BREVO_API_KEY || '',
+  listId: import.meta.env.BREVO_LIST_ID || '',
+  templateId: import.meta.env.BREVO_TEMPLATE_ID || '5',
+}
+
+export const NAV_LINKS: SocialLink[] = [
+  {
+    href: '/',
+    label: 'Home',
+  },
+  {
+    href: '/blog',
+    label: 'Blog',
+  },
+  {
+    href: '/support',
+    label: 'Support',
+  },
+]
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    href: 'mailto:contact@kbemom.com',
+    label: 'Email',
+  },
+  {
+    href: '/rss.xml',
+    label: 'RSS',
+  },
+]
+
+export const ICON_MAP: IconMap = {
+  Website: 'lucide:globe',
+  GitHub: 'lucide:github',
+  LinkedIn: 'lucide:linkedin',
+  Twitter: 'lucide:twitter',
+  Email: 'lucide:mail',
+  RSS: 'lucide:rss',
+}
+
+// Newsletter consent text (centralized for GDPR compliance)
+export const NEWSLETTER_CONSENT_TEXT = {
+  text: 'I agree to receive newsletter emails.',
+  privacyLink: '/privacy',
+  privacyText: 'Privacy Policy',
+}

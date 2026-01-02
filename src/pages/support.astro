@@ -1,0 +1,124 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PageHead from '@/components/PageHead.astro'
+import { SITE } from '@/consts'
+
+const pageTitle = `Support — ${SITE.title}`
+const pageDescription = 'Contact Kettlebell EMOM Builder support. Get help with the app and reach out to our team.'
+
+// Check for success parameter
+const url = Astro.url
+const success = url.searchParams.get('success') === 'true'
+---
+
+<Layout>
+  <PageHead slot="head" title={pageTitle} description={pageDescription} />
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-16">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-foreground">
+          Contact Kettlebell EMOM Support
+        </h1>
+        <p class="mt-4 text-xl text-muted-foreground">
+          If you have issues with the Kettlebell EMOM app, reach out below.
+        </p>
+      </div>
+
+      <!-- Support Form -->
+      <div class="bg-secondary p-8 rounded-xl border border-border">
+        <form action="https://formsubmit.co/contact@kbemom.com" method="POST" class="space-y-6">
+          <!-- Honeypot -->
+          <input type="text" name="_honey" style="display:none">
+          
+          <!-- Disable Captcha -->
+          <input type="hidden" name="_captcha" value="false">
+          
+          <!-- Success Page -->
+          <input type="hidden" name="_next" value="https://kbemom.com/support?success=true">
+          
+          <!-- Subject -->
+          <input type="hidden" name="_subject" value="New Support Request - Kettlebell EMOM Builder">
+
+          <!-- Name Field -->
+          <div>
+            <label for="name" class="block text-sm font-semibold text-foreground mb-2">
+              Name <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              placeholder="Your name"
+            >
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="block text-sm font-semibold text-foreground mb-2">
+              Email <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              class="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              placeholder="your.email@example.com"
+            >
+          </div>
+
+          <!-- Message Field -->
+          <div>
+            <label for="message" class="block text-sm font-semibold text-foreground mb-2">
+              Message <span class="text-red-500">*</span>
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              required 
+              rows="6" 
+              class="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-vertical"
+              placeholder="How can we help you?"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button 
+              type="submit" 
+              class="w-full bg-gradient-to-r from-blue-400 to-indigo-600 hover:from-blue-500 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-300"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message -->
+        {success && (
+          <div class="mt-8 p-4 bg-additive/10 border border-additive rounded-lg">
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-additive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h3 class="font-bold text-additive">Message sent!</h3>
+                <p class="text-additive-foreground text-sm mt-1">We'll get back to you as soon as possible.</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Additional Support Info -->
+      <div class="mt-12 text-center">
+        <p class="text-sm text-muted-foreground">
+          We typically respond within 24-48 hours.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>

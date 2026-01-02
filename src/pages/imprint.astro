@@ -1,0 +1,65 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PageHead from '@/components/PageHead.astro'
+import { SITE } from '@/consts'
+
+const pageTitle = `Imprint — ${SITE.title}`
+const pageDescription = 'Legal information and contact details for Kettlebell EMOM Builder.'
+---
+
+<Layout>
+  <PageHead 
+    slot="head" 
+    title={pageTitle} 
+    description={pageDescription}
+    noindex={true}
+  />
+
+  <main class="container mx-auto px-6 py-16">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-foreground">
+        Imprint
+      </h1>
+      
+      <div class="prose prose-invert max-w-none mt-8 text-muted-foreground">
+        <p>
+          Information disclosure in accordance with §5 of the Austrian E-Commerce Act (ECG) and §25 of the Media Act (Mediengesetz).
+        </p>
+        
+        <h2 class="text-foreground">Contact</h2>
+        <p>
+          <a 
+            href="#" 
+            id="show-address-link"
+            class="text-primary hover:underline cursor-pointer"
+          >
+            Show info
+          </a><br>
+          Austria
+        </p>
+
+        <p>
+          <strong>Email:</strong> 
+          <a href="mailto:contact@kbemom.com" class="text-primary hover:underline">
+            contact@kbemom.com
+          </a><br>
+          <strong>Support:</strong> 
+          <a href="/support" class="text-primary hover:underline">
+            kbemom.com/support
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('show-address-link')?.addEventListener('click', (event) => {
+      event.preventDefault();
+      
+      // Base64 encoded address for spam protection
+      const encodedAddress = 'Q2xlbWVucyBQcmVyb3Zza3kKRmVyZGluYW5kc2dhc3NlIDIwCjIzNTEgV2llbmVyIE5ldWRvcmY=';
+      const decodedAddress = atob(encodedAddress);
+      alert(decodedAddress);
+    });
+  </script>
+</Layout>
