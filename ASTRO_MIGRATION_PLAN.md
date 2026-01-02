@@ -281,95 +281,103 @@ Edit `src/consts.ts`:
 
 ---
 
-## Phase 4: Blog Setup
+## Phase 4: Blog Setup ✅
 
-### Step 4.1: Configure Blog Content Collection
+### Step 4.1: Configure Blog Content Collection ✅
 **Duration:** 20 minutes  
 **Prerequisites:** Phase 2 complete
 
-- [ ] Review `src/content/config.ts` from merox-erudite
-- [ ] Ensure `blog` collection is defined with schema:
-  - `title` (string)
-  - `description` (string)
-  - `pubDate` (date)
-  - `author` (string or reference)
-  - `tags` (array of strings)
-  - `image` (optional)
-- [ ] Create `src/content/blog/` directory (if not exists)
-- [ ] Create `src/content/authors/` directory (if needed)
+- [x] Review `src/content.config.ts` from merox-erudite ✅
+- [x] Ensure `blog` collection is defined with schema ✅
+  - `title` (string) ✅
+  - `description` (string) ✅
+  - `date` (date) ✅
+  - `authors` (array of strings) ✅
+  - `tags` (array of strings) ✅
+  - `image` (optional) ✅
+  - `draft` (boolean) ✅
+- [x] `src/content/blog/` directory exists ✅
+- [x] `src/content/authors/` directory exists ✅
+- [x] Removed unused projects collection ✅
 
-**Verification:** Content collection schema compiles without errors
+**Verification:** ✅ Content collection schema compiles without errors
 
 ---
 
-### Step 4.2: Create Blog Listing Page
+### Step 4.2: Create Blog Listing Page ✅
 **Duration:** 30 minutes  
 **Prerequisites:** Step 4.1 complete
 
-- [ ] Create or adapt `src/pages/blog/index.astro`
-- [ ] Query all blog posts using Astro content collections API
-- [ ] Display posts in reverse chronological order
-- [ ] Show: title, description, date, tags
-- [ ] Add pagination if theme supports it
-- [ ] Apply brand styling (dark theme, gradients)
+- [x] Blog listing page already exists at `src/pages/blog/[...page].astro` ✅
+- [x] Queries all blog posts using Astro content collections API ✅
+- [x] Displays posts in reverse chronological order ✅
+- [x] Shows title, description, date, tags ✅
+- [x] Pagination included ✅
+- [x] Brand styling applied (dark theme) ✅
 
-**Verification:** `/blog` page loads (even if empty initially)
+**Verification:** ✅ `/blog` page loads with blog posts
 
 ---
 
-### Step 4.3: Create Blog Post Layout
+### Step 4.3: Create Blog Post Layout ✅
 **Duration:** 45 minutes  
 **Prerequisites:** Step 4.2 complete
 
-- [ ] Create or adapt `src/layouts/BlogPost.astro`
-- [ ] Include:
-  - Post title
-  - Published date
-  - Author info
-  - Tag list
-  - Post content (rendered MDX)
-  - Previous/Next post navigation (optional)
-- [ ] Add Table of Contents component (if theme has it)
-- [ ] Style with brand colors and typography
+- [x] Blog post layout exists via theme's `src/pages/blog/[...id].astro` ✅
+- [x] Includes all required elements ✅
+  - Post title ✅
+  - Published date ✅
+  - Author info ✅
+  - Tag list ✅
+  - Post content (rendered MDX) ✅
+  - Table of Contents component ✅
+- [x] Styled with brand colors and typography ✅
 
-**Verification:** Can create test post and it renders correctly
+**Verification:** ✅ Blog posts render correctly with proper layout
 
 ---
 
-### Step 4.4: Create Sample Blog Posts
+### Step 4.4: Create Sample Blog Posts ✅
 **Duration:** 30 minutes  
 **Prerequisites:** Step 4.3 complete
 
-Create 2-3 sample blog posts to test:
+Created 3 brand-aligned blog posts:
 
-**Post 1:** `src/content/blog/welcome.mdx`
-- [ ] Title: "Welcome to the Kettlebell EMOM Blog"
-- [ ] Content: Introduction to blog, brand values
-- [ ] Include an image
-- [ ] Test frontmatter parsing
+**Post 1:** `src/content/blog/welcome/index.mdx` ✅
+- [x] Title: "Welcome to Kettlebell EMOM Builder" ✅
+- [x] Content: Introduction to blog, brand values, philosophy ✅
+- [x] Links to app and support ✅
+- [x] Frontmatter properly configured ✅
 
-**Post 2:** `src/content/blog/structure-beats-motivation.mdx`
-- [ ] Title: "Structure Beats Motivation"
-- [ ] Content: Expand on brand messaging
-- [ ] Test tags and categories
+**Post 2:** `src/content/blog/structure-beats-motivation/index.mdx` ✅
+- [x] Title: "Structure Beats Motivation Every Time" ✅
+- [x] Content: Core brand messaging about systems over feelings ✅
+- [x] Uses Callout components ✅
+- [x] Tags and categories configured ✅
 
-**Post 3:** (Optional) Test MDX features
-- [ ] Include custom components
-- [ ] Test code blocks, images, etc.
+**Post 3:** `src/content/blog/why-kettlebells/index.mdx` ✅
+- [x] Title: "Why Kettlebells Work for Sustainable Strength" ✅
+- [x] Content: Equipment philosophy and EMOM format advantages ✅
+- [x] Practical advice and clear structure ✅
 
-**Verification:** All sample posts display correctly on blog listing and individual pages
+**Additional:**
+- [x] Created kettlebell-emom author profile ✅
+- [x] Removed example posts and author ✅
+
+**Verification:** ✅ All sample posts display correctly on blog listing and individual pages
 
 ---
 
-### Step 4.5: Blog SEO & RSS Feed
+### Step 4.5: Blog SEO & RSS Feed ✅
 **Duration:** 20 minutes  
 **Prerequisites:** Step 4.4 complete
 
-- [ ] Ensure each blog post has proper meta tags (title, description, OG image)
-- [ ] Configure RSS feed (theme may include this)
-- [ ] Create `src/pages/rss.xml.js` (or similar) if needed
-- [ ] Test RSS feed at `/rss.xml`
-- [ ] Add RSS link to footer or header
+- [x] Each blog post has proper meta tags (title, description, OG image) ✅
+- [x] RSS feed exists at `src/pages/rss.xml.ts` ✅
+- [x] RSS feed tested and working at `/rss.xml` ✅
+- [x] RSS link already included in footer via SOCIAL_LINKS ✅
+
+**Verification:** ✅ RSS feed validates and blog posts have proper SEO
 
 **Verification:** RSS feed validates at [W3C Feed Validator](https://validator.w3.org/feed/)
 
