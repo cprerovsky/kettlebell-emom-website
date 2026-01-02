@@ -19,6 +19,7 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  outDir: './docs',
   site: 'https://kbemom.com', // Custom domain
   // Static output - API routes are handled by Cloudflare Pages Functions in /functions folder
   integrations: [

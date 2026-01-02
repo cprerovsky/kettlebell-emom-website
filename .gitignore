@@ -1,5 +1,6 @@
 .DS_Store
-# dist/ - commented out so we can commit it for GitHub Pages
+dist/
+# docs/ - commented out so we can commit it for GitHub Pages (Astro output dir)
 .astro/
 node_modules/
 npm-debug.log*
