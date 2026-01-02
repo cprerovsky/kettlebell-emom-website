@@ -1,11 +1,11 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'Your Blog Name',
+  title: 'Kettlebell EMOM Builder',
   description:
-    'A brief description of your blog. This will be used in meta tags and social sharing.',
-  href: 'https://yourdomain.com',
-  author: 'your-author-id',
+    'Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds.',
+  href: 'https://kbemom.com',
+  author: 'kettlebell-emom',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 6,
@@ -43,26 +43,22 @@ export const BREVO = {
 
 export const NAV_LINKS: SocialLink[] = [
   {
+    href: '/',
+    label: 'Home',
+  },
+  {
     href: '/blog',
     label: 'Blog',
   },
   {
-    href: '/about',
-    label: 'About',
+    href: '/support',
+    label: 'Support',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/username',
-    label: 'GitHub',
-  },
-  {
-    href: 'https://twitter.com/username',
-    label: 'Twitter',
-  },
-  {
-    href: 'mailto:your@email.com',
+    href: 'mailto:contact@kbemom.com',
     label: 'Email',
   },
   {

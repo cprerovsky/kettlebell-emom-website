@@ -75,7 +75,13 @@ const isExternalLink = (href: string) => {
               Privacy Policy
             </Link>
             <Link href="/terms" class="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Terms of Service
+              Terms of Use
+            </Link>
+            <Link href="/imprint" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Imprint
+            </Link>
+            <Link href="/support" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Support
             </Link>
           </nav>
         </div>
@@ -91,14 +97,19 @@ const isExternalLink = (href: string) => {
       <div class="h-px bg-border/60" aria-hidden="true"></div>
 
       <!-- Bottom Section -->
-      <div class="flex flex-col items-center gap-2 sm:flex-row sm:justify-between text-sm text-muted-foreground">
-        <div class="text-center sm:text-left">
-          &copy; {new Date().getFullYear()} {SITE.title}. All rights reserved.
+      <div class="flex flex-col items-center gap-4 text-sm text-muted-foreground">
+        <div class="flex flex-col items-center gap-2 sm:flex-row sm:justify-between w-full">
+          <div class="text-center sm:text-left">
+            &copy; {new Date().getFullYear()} {SITE.title}. All rights reserved.
+          </div>
+          <div class="text-xs text-muted-foreground/80">
+            <span>
+              Theme: <a href="https://github.com/meroxdotdev/merox-erudite" target="_blank" rel="noopener noreferrer" class="underline hover:text-foreground transition-colors">merox-erudite</a>
+            </span>
+          </div>
         </div>
-        <div class="text-xs text-muted-foreground/80">
-          <span>
-            Theme: <a href="https://github.com/meroxdotdev/merox-erudite" target="_blank" rel="noopener noreferrer" class="underline hover:text-foreground transition-colors">merox-erudite</a>
-          </span>
+        <div class="text-center text-xs text-muted-foreground/70 max-w-2xl leading-relaxed">
+          <strong>Disclaimer:</strong> This app does not provide medical advice. Consult your physician before starting any exercise program. The information provided by this app is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.
         </div>
       </div>
     </div>
