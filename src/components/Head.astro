@@ -23,11 +23,7 @@ const ogImage = image || (cleanPathname ? new URL(`/og${cleanPathname}.png`, Ast
 <head>
   <script is:inline>
     (function () {
-      const theme =
-        localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light')
+      const theme = localStorage.getItem('theme') || 'dark'
       document.documentElement.setAttribute('data-theme', theme)
     })()
   </script>
