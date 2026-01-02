@@ -17,13 +17,6 @@ export const ANALYTICS = {
   google: import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID || '',
 }
 
-// Disqus Comments
-// Get your shortname from https://disqus.com/admin/settings/general/
-// Set it as an environment variable: PUBLIC_DISQUS_SHORTNAME=your-shortname
-export const DISQUS = {
-  shortname: import.meta.env.PUBLIC_DISQUS_SHORTNAME || '',
-}
-
 // Brevo Newsletter
 // Get your API key from https://app.brevo.com/settings/keys/api
 // Set it as an environment variable: BREVO_API_KEY=your-api-key
