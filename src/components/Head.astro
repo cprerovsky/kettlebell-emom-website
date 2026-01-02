@@ -1,5 +1,5 @@
 ---
-import { SITE, ANALYTICS, UMAMI } from '@/consts'
+import { SITE, ANALYTICS } from '@/consts'
 import { ClientRouter } from 'astro:transitions'
 import Favicons from './Favicons.astro'
 
@@ -109,12 +109,7 @@ const ogImage = image || (cleanPathname ? new URL(`/og${cleanPathname}.png`, Ast
       <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     </>
   )}
-  {UMAMI.websiteId && (
-    <>
-      <link rel="dns-prefetch" href="https://cloud.umami.is" />
-      <link rel="preconnect" href="https://cloud.umami.is" crossorigin />
-    </>
-  )}
+
   <!-- Prefetch search index for faster search -->
   <link rel="prefetch" href="/api/search-index.json" as="fetch" crossorigin="anonymous" />
   
@@ -132,10 +127,6 @@ const ogImage = image || (cleanPathname ? new URL(`/og${cleanPathname}.png`, Ast
   )}
   
   <ClientRouter />
-  <!-- Umami Analytics -->
-  {UMAMI.websiteId && (
-    <script is:inline defer src="https://cloud.umami.is/script.js" define:vars={{ websiteId: UMAMI.websiteId }} data-website-id={UMAMI.websiteId}></script>
-  )}
 
   <slot />
 </head>

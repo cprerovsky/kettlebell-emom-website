@@ -17,12 +17,6 @@ export const ANALYTICS = {
   google: import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID || '',
 }
 
-// Umami Analytics
-// Configure via environment variable: PUBLIC_UMAMI_WEBSITE_ID
-export const UMAMI = {
-  websiteId: import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '',
-}
-
 // Disqus Comments
 // Get your shortname from https://disqus.com/admin/settings/general/
 // Set it as an environment variable: PUBLIC_DISQUS_SHORTNAME=your-shortname
