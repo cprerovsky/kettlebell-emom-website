@@ -67,7 +67,7 @@
     }
 
     :where(strong):not(:where(.not-prose, .not-prose *)) {
-      @apply text-foreground font-medium;
+      @apply text-foreground font-bold;
     }
 
     :where(ul):not(:where(.not-prose, .not-prose *)) {
