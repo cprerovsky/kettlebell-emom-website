@@ -1,0 +1,402 @@
+<!DOCTYPE html><html class="bg-background text-foreground scheme-light-dark" lang="en-US"> <head><script>
+    // Always force dark theme
+    (function () {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    })()
+  </script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"><meta name="generator" content="Astro v5.16.6"><!-- Primary Meta Tags (deduplicated) --><meta name="title" content="Kettlebell EMOM Builder"><meta name="description" content="Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds."><link rel="canonical" href="https://kbemom.com/privacy/"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://kbemom.com/privacy/"><meta property="og:title" content="Kettlebell EMOM Builder"><meta property="og:description" content="Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds."><meta property="og:image" content="https://kbemom.com/og/privacy.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://kbemom.com/privacy/"><meta name="twitter:title" content="Kettlebell EMOM Builder"><meta name="twitter:description" content="Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds."><meta name="twitter:image" content="https://kbemom.com/og/privacy.png"><meta name="HandheldFriendly" content="True"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no"><meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)"><link rel="sitemap" href="/sitemap-index.xml"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="Kettlebell EMOM Builder" href="https://kbemom.com/rss.xml"><link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="astro-erudite"><link rel="manifest" href="/site.webmanifest"><!-- Resource Hints for Performance --><!-- Prefetch search index for faster search --><link rel="prefetch" href="/api/search-index.json" as="fetch" crossorigin="anonymous"><!-- Google Analytics --><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><!-- Minimal head helpers to avoid duplicates with Head.astro --><title>Kettlebell EMOM Builder</title><link rel="stylesheet" href="/_astro/privacy.CttucR3u.css">
+<style>.prose{color:hsl(var(--muted-foreground))}.prose h1{color:hsl(var(--foreground));font-weight:800;font-size:2.25rem;margin-bottom:2rem}@media(min-width:768px){.prose h1{font-size:3rem}}.prose h2{color:hsl(var(--foreground));font-weight:700;font-size:1.5rem;margin-top:3rem;margin-bottom:1rem}@media(min-width:768px){.prose h2{font-size:1.875rem}}.prose h3{color:hsl(var(--foreground));font-weight:600;font-size:1.25rem;margin-top:2rem;margin-bottom:.75rem}@media(min-width:768px){.prose h3{font-size:1.5rem}}.prose p{margin-bottom:1rem;line-height:1.625}.prose ul,.prose ol{margin-bottom:1rem;margin-left:1.5rem}.prose li{margin-bottom:.5rem}.prose a{color:hsl(var(--primary))}.prose a:hover{text-decoration:underline}.prose strong{color:hsl(var(--foreground));font-weight:600}.prose code{background-color:hsl(var(--secondary));padding:.125rem .375rem;border-radius:.25rem;font-size:.875rem}
+</style></head><body class="flex h-fit min-h-screen flex-col gap-y-6 font-sans" data-astro-transition-persist="astro-25uocxhb-1"> <!-- Skip to main content link for accessibility --> <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" aria-label="Skip to main content">
+Skip to main content
+</a> <!-- Prevent same-page navigation to avoid unnecessary transitions --> <script>
+      (function() {
+        if (window.__preventSamePageNav) return
+        window.__preventSamePageNav = true
+        
+        function normalizePath(path) {
+          return path ? path.split('#')[0].replace(/\/$/, '') || '/' : '/'
+        }
+        
+        function shouldPreventNavigation(link) {
+          if (!link) return false
+          
+          const href = link.getAttribute('href')
+          if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+            return false
+          }
+          
+          const currentPath = normalizePath(window.location.pathname)
+          const targetPath = normalizePath(href)
+          
+          return currentPath === targetPath && !href.includes('#')
+        }
+        
+        // Handle touch events first (mobile) - must be non-passive to prevent default
+        function handleTouchStart(e) {
+          const link = e.target.closest('a[data-internal-link="true"]')
+          if (link && shouldPreventNavigation(link)) {
+            e.preventDefault()
+            e.stopPropagation()
+            e.stopImmediatePropagation()
+            return false
+          }
+        }
+        
+        // Handle click events (desktop and mobile fallback)
+        function handleClick(e) {
+          const link = e.target.closest('a[data-internal-link="true"]')
+          if (link && shouldPreventNavigation(link)) {
+            e.preventDefault()
+            e.stopPropagation()
+            e.stopImmediatePropagation()
+            return false
+          }
+        }
+        
+        // Use capture phase to intercept before Astro's view transitions
+        // Touch events must be non-passive to allow preventDefault
+        document.addEventListener('touchstart', handleTouchStart, { passive: false, capture: true })
+        document.addEventListener('click', handleClick, true)
+      })()
+    </script> <header class="bg-background/50 sticky top-0 z-50 backdrop-blur-sm xl:backdrop-blur-none xl:bg-transparent divide-y divide-border xl:divide-none"> <header class="bg-background/50 sticky top-0 z-10 backdrop-blur-md" data-astro-transition-persist="astro-l7r54iwe-2"> <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 p-4"> <a href="/" target="_self" class="transition-colors duration-300 ease-in-out flex shrink-0 items-center gap-2 text-xl font-bold" data-astro-reload="true" data-internal-link="true" data-astro-reload>  <span class="bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent"> Kettlebell EMOM Builder </span>  </a> <div class="flex items-center gap-2 md:gap-4"> <nav class="hidden items-center gap-4 text-sm sm:gap-6 md:flex"> <a href="/" target="_self" class="duration-300 ease-in-out text-foreground/60 hover:text-foreground/80 capitalize transition-colors flex items-center gap-1.5" data-internal-link="true">  <span>Home</span>  </a><a href="/blog" target="_self" class="duration-300 ease-in-out text-foreground/60 hover:text-foreground/80 capitalize transition-colors flex items-center gap-1.5" data-internal-link="true">  <span>Blog</span>  </a><a href="/support" target="_self" class="duration-300 ease-in-out text-foreground/60 hover:text-foreground/80 capitalize transition-colors flex items-center gap-1.5" data-internal-link="true">  <span>Support</span>  </a> </nav> <div class="hidden h-6 w-px bg-border/60 md:block" aria-hidden="true"></div> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="35s3v" prefix="r2" component-url="/_astro/SearchButton.YROQxhjb.js" component-export="default" renderer-url="/_astro/client.RBCWFl7J.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;SearchButton&quot;,&quot;value&quot;:true}" await-children><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 border md:border-0 md:bg-transparent md:hover:bg-muted md:-my-2 md:-me-2 md:size-8" title="Search (⌘K)" aria-label="Search blog posts" aria-expanded="false" aria-haspopup="dialog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search h-5 w-5 md:h-4 md:w-4" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg><span class="sr-only">Search</span></button><!--astro:end--></astro-island> <astro-island uid="22xikL" prefix="r3" component-url="/_astro/mobile-menu.DM_qY_p3.js" component-export="default" renderer-url="/_astro/client.RBCWFl7J.js" props="{&quot;data-astro-transition-persist&quot;:[0,&quot;astro-iq5tym4z-3&quot;]}" ssr client="idle" opts="{&quot;name&quot;:&quot;MobileMenu&quot;,&quot;value&quot;:true}" data-astro-transition-persist="astro-iq5tym4z-3" await-children><button data-slot="dropdown-menu-trigger" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 md:hidden" title="Menu" type="button" id="radix-_r3R_0_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg><span class="sr-only">Toggle menu</span></button><!--astro:end--></astro-island> </div> </div> </header>   </header> <main id="main-content" class="w-full mx-auto flex grow flex-col gap-y-6 px-4 pb-20" tabindex="-1">   <main class="container mx-auto px-6 py-16"> <article class="prose prose-invert prose-lg max-w-4xl mx-auto"> <h1 id="privacy-policy-for-kettlebell-emom-builder">Privacy Policy for Kettlebell EMOM Builder</h1>
+<p><strong>Last updated: December 24, 2025</strong></p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>We take your privacy seriously. This Privacy Policy explains how <strong>Kettlebell EMOM Builder</strong> (“we”, “our”, “us”) handles information when you use our mobile app, website, and related services (“Service”).</p>
+<p>We do <strong>not collect personal data</strong> such as names, email addresses, or account information through the app. We do store certain preferences and counters <strong>locally on your device</strong> to operate the free tier and remember your workout settings.</p>
+<p>We use <strong>privacy-focused analytics</strong> (TelemetryDeck) in the app to understand usage patterns and improve the Service. This analytics service is designed with privacy in mind and does not track personal information.</p>
+<p>On our website, we use <strong>Google Analytics</strong> to understand visitor behavior and improve our service. You can opt out of analytics tracking at any time through our cookie consent banner.</p>
+<h2 id="2-data-controller">2. Data Controller</h2>
+<p>The data controller responsible for your data is:</p>
+<p>Clemens Prerovsky<br>
+Email: <a href="mailto:legal@kbemom.com">legal@kbemom.com</a></p>
+<h2 id="3-data-we-collect">3. Data We Collect</h2>
+<h3 id="a-mobile-app--on-device-storage-only">a) Mobile App — On-device storage only</h3>
+<ul>
+<li><strong>No personal accounts</strong>: We do not collect names, email addresses, or login details.</li>
+<li><strong>No remote workout storage</strong>: Workout data is not transmitted or stored on our servers.</li>
+<li><strong>On-device storage (Capacitor Preferences)</strong>: We store the following information locally on your device to operate the App:
+<ul>
+<li>The number of free workouts used (to determine when the paywall applies).</li>
+<li>Workout configuration preferences such as selected muscle groups, number of rounds, and number of exercises.<br>
+This data does not leave your device and is under your control. Clearing app data or reinstalling the App may reset this information.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-mobile-app--privacy-focused-analytics-telemetrydeck">b) Mobile App — Privacy-Focused Analytics (TelemetryDeck)</h3>
+<p>We use <strong>TelemetryDeck</strong>, a privacy-first analytics service, to understand how the app is used and improve the user experience.</p>
+<p><strong>What TelemetryDeck collects:</strong></p>
+<ul>
+<li><strong>Usage events</strong>: App launches, workout generations, workout starts/completions, feature interactions</li>
+<li><strong>Anonymous user identifier</strong>: A randomly generated ID created on your device, cryptographically hashed before transmission</li>
+<li><strong>App version and build number</strong>: To identify which app version you’re using</li>
+<li><strong>Device information</strong>: Operating system version (automatically collected by TelemetryDeck)</li>
+<li><strong>Workout metadata</strong>: Number of rounds, exercises, and muscle groups selected (no actual exercise names or personal workout data)</li>
+</ul>
+<p><strong>Privacy features:</strong></p>
+<ul>
+<li><strong>No personal data</strong>: We do not collect names, emails, IP addresses, or any personally identifiable information</li>
+<li><strong>Hashed identifiers</strong>: Your anonymous user ID is cryptographically hashed before leaving your device</li>
+<li><strong>GDPR compliant</strong>: TelemetryDeck is designed for GDPR compliance and does not use cookies or tracking pixels</li>
+<li><strong>No cross-site tracking</strong>: TelemetryDeck does not track you across other apps or websites</li>
+<li><strong>European servers</strong>: Data is stored on servers in the European Union (Germany)</li>
+</ul>
+<p><strong>Legal basis</strong>: <strong>Legitimate interest</strong> in improving the app and understanding how it’s used (Article 6(1)(f) GDPR). The data is anonymous and cannot be used to identify you.</p>
+<p>For more information: <a href="https://telemetrydeck.com/privacy/" rel="nofollow noreferrer noopener" target="_blank">TelemetryDeck Privacy Policy</a></p>
+<h3 id="c-website--google-analytics">c) Website — Google Analytics</h3>
+<p>We use <strong>Google Analytics 4</strong> on our website (kbemom.com) to understand how visitors use our site. This helps us improve the user experience and measure the effectiveness of our content.</p>
+<p><strong>What Google Analytics collects:</strong></p>
+<ul>
+<li><strong>Page views and navigation</strong>: Which pages you visit and how you navigate our site</li>
+<li><strong>Referral sources</strong>: How you arrived at our website (e.g., from a search engine, social media, or direct visit)</li>
+<li><strong>Device and browser information</strong>: Type of device, browser, screen resolution, and operating system</li>
+<li><strong>Geographic location</strong>: Approximate location based on IP address (city/country level only)</li>
+<li><strong>Interaction events</strong>: Clicks on download buttons and other key actions</li>
+<li><strong>Session duration</strong>: How long you spend on our website</li>
+</ul>
+<p><strong>IP Anonymization</strong>: We have enabled IP anonymization, which means your full IP address is never stored by Google Analytics.</p>
+<p><strong>Cookies</strong>: Google Analytics uses cookies to distinguish unique visitors and sessions. These cookies are only set with your consent. The main cookies used are:</p>
+<ul>
+<li><code>_ga</code>: Expires after 2 years, used to distinguish users</li>
+<li><code>_ga_&#x3C;container-id></code>: Expires after 2 years, used to persist session state</li>
+</ul>
+<p><strong>Legal basis</strong>: We collect this data based on your <strong>consent</strong> (Article 6(1)(a) GDPR). You can withdraw consent at any time by declining or revoking cookie permissions.</p>
+<h3 id="d-support-form">d) Support Form</h3>
+<p>When you submit a support request via our website, we collect:</p>
+<ul>
+<li>Your name (as provided)</li>
+<li>Your email address</li>
+<li>Your message content</li>
+</ul>
+<p>This data is transmitted via FormSubmit.co and delivered to our email (<a href="mailto:contact@kbemom.com">contact@kbemom.com</a>). We use this information solely to respond to your inquiry.</p>
+<p><strong>Legal basis</strong>: <strong>Legitimate interest</strong> in providing customer support (Article 6(1)(f) GDPR).</p>
+<h2 id="4-use-of-data">4. Use of Data</h2>
+<p>We use collected data to:</p>
+<ul>
+<li>Operate and improve the Service</li>
+<li>Understand how the app is used and identify areas for improvement (via TelemetryDeck)</li>
+<li>Understand how visitors use our website (via Google Analytics)</li>
+<li>Measure the effectiveness of our marketing and download conversion</li>
+<li>Provide customer support and respond to inquiries</li>
+<li>Process payments for premium features (if applicable)</li>
+<li>Comply with legal obligations</li>
+</ul>
+<h2 id="5-legal-basis-gdpr">5. Legal Basis (GDPR)</h2>
+<p>If you are located in the European Union, we process personal data under one or more of the following legal bases:</p>
+<ul>
+<li><strong>Consent</strong> (e.g. analytics cookies)</li>
+<li><strong>Performance of a contract</strong> (if you purchase a subscription)</li>
+<li><strong>Legitimate interests</strong> (e.g. improving our Service)</li>
+<li><strong>Legal obligations</strong></li>
+</ul>
+<h2 id="6-data-retention">6. Data Retention</h2>
+<ul>
+<li><strong>App analytics (TelemetryDeck)</strong>: Anonymous usage data is retained for analysis purposes. You can request deletion of your anonymous user ID by contacting us.</li>
+<li><strong>Website analytics</strong>: Google Analytics retains user and event data for 14 months by default. After this period, the data is automatically deleted.</li>
+<li><strong>Support inquiries</strong>: Email correspondence is retained as long as necessary to resolve your issue, typically up to 2 years.</li>
+<li><strong>Billing records</strong> (if applicable): Retained as required by law (typically 7-10 years in Austria).</li>
+<li><strong>On-device app data</strong>: Workout data and preferences saved locally on your device remain only on your device and are under your control.</li>
+</ul>
+<h2 id="7-your-rights">7. Your Rights</h2>
+<p>You have the following rights under GDPR:</p>
+<ul>
+<li><strong>Access</strong> to your data</li>
+<li><strong>Correction</strong> of inaccurate data</li>
+<li><strong>Deletion</strong> of your data</li>
+<li><strong>Restriction or objection</strong> to processing</li>
+<li><strong>Data portability</strong></li>
+<li><strong>Withdrawal of consent</strong> at any time (for cookies/analytics) — simply decline cookies in the banner or clear your browser’s cookies</li>
+<li><strong>Complaint</strong> to the Austrian Data Protection Authority (Datenschutzbehörde, <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a>)</li>
+</ul>
+<p><strong>To opt out of Google Analytics:</strong></p>
+<ul>
+<li>Decline cookie consent when visiting our website, or</li>
+<li>Use the <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noreferrer noopener" target="_blank">Google Analytics Opt-out Browser Add-on</a></li>
+<li>Clear cookies in your browser settings</li>
+</ul>
+<p>To exercise other rights, please contact: <a href="mailto:legal@kbemom.com">legal@kbemom.com</a>.</p>
+<h2 id="8-data-sharing--third-party-services">8. Data Sharing &#x26; Third-Party Services</h2>
+<p>We use the following third-party services that may process your data:</p>
+<h3 id="telemetrydeck-telemetrydeck-gmbh">TelemetryDeck (TelemetryDeck GmbH)</h3>
+<ul>
+<li><strong>Purpose</strong>: Privacy-focused app analytics</li>
+<li><strong>Data processed</strong>: See section 3b above</li>
+<li><strong>Location</strong>: Data is stored on servers in the European Union (Germany)</li>
+<li><strong>Safeguards</strong>: GDPR-compliant service, cryptographic hashing of user identifiers</li>
+<li><strong>Privacy Policy</strong>: <a href="https://telemetrydeck.com/privacy/" rel="nofollow noreferrer noopener" target="_blank">https://telemetrydeck.com/privacy/</a></li>
+</ul>
+<h3 id="google-analytics-google-llc">Google Analytics (Google LLC)</h3>
+<ul>
+<li><strong>Purpose</strong>: Website analytics and usage statistics</li>
+<li><strong>Data processed</strong>: See section 3b above</li>
+<li><strong>Location</strong>: Data may be transferred to and processed in the United States</li>
+<li><strong>Safeguards</strong>: Google LLC is certified under the EU-U.S. Data Privacy Framework. We have also enabled IP anonymization.</li>
+<li><strong>Privacy Policy</strong>: <a href="https://policies.google.com/privacy" rel="nofollow noreferrer noopener" target="_blank">https://policies.google.com/privacy</a></li>
+</ul>
+<h3 id="formsubmitco">FormSubmit.co</h3>
+<ul>
+<li><strong>Purpose</strong>: Support form submissions</li>
+<li><strong>Data processed</strong>: Name, email, message content</li>
+<li><strong>Privacy Policy</strong>: <a href="https://formsubmit.co/privacy" rel="nofollow noreferrer noopener" target="_blank">https://formsubmit.co/privacy</a></li>
+</ul>
+<h3 id="apple-app-store--google-play-if-applicable">Apple App Store / Google Play (if applicable)</h3>
+<ul>
+<li><strong>Purpose</strong>: In-app purchases and subscription management</li>
+<li><strong>Data processed</strong>: Transaction data (we do not receive full payment details)</li>
+</ul>
+<p>We do not sell your personal data to third parties.</p>
+<h2 id="9-international-transfers">9. International Transfers</h2>
+<p>Data collected via Google Analytics may be transferred to and processed in the United States and other countries outside the European Economic Area (EEA).</p>
+<p>App analytics via TelemetryDeck are stored within the European Union (Germany) and do not involve international data transfers.</p>
+<p>For Google Analytics, we ensure adequate safeguards are in place:</p>
+<ul>
+<li>Google LLC is certified under the <strong>EU-U.S. Data Privacy Framework</strong></li>
+<li>We have implemented <strong>IP anonymization</strong> to reduce the personal nature of the data</li>
+<li>Google provides <strong>Standard Contractual Clauses</strong> for data transfers</li>
+</ul>
+<p>For more information, see Google’s data transfer mechanisms: <a href="https://business.safety.google/adsprocessorterms/" rel="nofollow noreferrer noopener" target="_blank">https://business.safety.google/adsprocessorterms/</a></p>
+<h2 id="10-security">10. Security</h2>
+<p>We implement appropriate technical and organizational measures to protect data. However, no system is completely secure, and we cannot guarantee absolute security.</p>
+<h2 id="11-children">11. Children</h2>
+<p>Our Service is not directed at children under 16. We do not knowingly collect data from children.</p>
+<h2 id="12-changes-to-this-policy">12. Changes to This Policy</h2>
+<p>We may update this Privacy Policy. Updates will be posted on this page and, for major changes, communicated via the app.</p>
+<h2 id="13-contact-us">13. Contact Us</h2>
+<p>If you have any questions or requests regarding this Privacy Policy, please contact:</p>
+<p>Clemens Prerovsky<br>
+Email: <a href="mailto:contact@kbemom.com">contact@kbemom.com</a></p> </article> </main>  </main>  <footer class="bg-background/80 border-t border-border/50 backdrop-blur-md"> <div class="w-full px-4 py-8 sm:py-10"> <div class="flex flex-col gap-8 max-w-3xl mx-auto"> <!-- Main Footer Content --> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"> <!-- Navigation --> <div> <h4 class="text-sm font-semibold mb-3 text-foreground">Navigation</h4> <nav class="flex flex-col gap-2"> <a href="/" target="_self" class="duration-300 ease-in-out text-sm text-muted-foreground hover:text-primary capitalize transition-colors flex items-center gap-1.5 group" data-internal-link="true">  <span>Home</span>  </a><a href="/blog" target="_self" class="duration-300 ease-in-out text-sm text-muted-foreground hover:text-primary capitalize transition-colors flex items-center gap-1.5 group" data-internal-link="true">  <span>Blog</span>  </a><a href="/support" target="_self" class="duration-300 ease-in-out text-sm text-muted-foreground hover:text-primary capitalize transition-colors flex items-center gap-1.5 group" data-internal-link="true">  <span>Support</span>  </a> </nav> </div> <!-- Legal --> <div> <h4 class="text-sm font-semibold mb-3 text-foreground">Legal</h4> <nav class="flex flex-col gap-2"> <a href="/privacy" target="_self" class="inline-block duration-300 ease-in-out text-sm text-muted-foreground hover:text-primary transition-colors" data-internal-link="true"> 
+Privacy Policy
+ </a> <a href="/terms" target="_self" class="inline-block duration-300 ease-in-out text-sm text-muted-foreground hover:text-primary transition-colors" data-internal-link="true"> 
+Terms of Use
+ </a> <a href="/imprint" target="_self" class="inline-block duration-300 ease-in-out text-sm text-muted-foreground hover:text-primary transition-colors" data-internal-link="true"> 
+Imprint
+ </a> </nav> </div> <!-- Connect --> <div> <h4 class="text-sm font-semibold mb-3 text-foreground">Connect</h4> <ul class="flex flex-wrap gap-2" role="list"> <li> <a href="mailto:contact@kbemom.com" target="_blank" rel="noopener noreferrer" class="duration-300 ease-in-out inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&#38;_svg]:pointer-events-none [&#38;_svg:not([class*='size-'])]:size-4 shrink-0 [&#38;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9" aria-label="Email" title="Email">  <svg width="1em" height="1em" class="size-4" data-icon="lucide:mail">   <symbol id="ai:lucide:mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></g></symbol><use href="#ai:lucide:mail"></use>  </svg>  </a> </li><li> <a href="/rss.xml" target="_blank" rel="noopener noreferrer" class="duration-300 ease-in-out inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&#38;_svg]:pointer-events-none [&#38;_svg:not([class*='size-'])]:size-4 shrink-0 [&#38;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9" aria-label="RSS" title="RSS">  <svg width="1em" height="1em" class="size-4" data-icon="lucide:rss">   <symbol id="ai:lucide:rss" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></g></symbol><use href="#ai:lucide:rss"></use>  </svg>  </a> </li> </ul> </div> </div> <!-- Separator --> <div class="h-px bg-border/60" aria-hidden="true"></div> <!-- Bottom Section --> <div class="flex flex-col items-center gap-4 text-sm text-muted-foreground"> <div class="flex flex-col items-center gap-2 sm:flex-row sm:justify-between w-full"> <div class="text-center sm:text-left">
+&copy; 2026 Kettlebell EMOM Builder. All rights reserved.
+</div> <div class="text-xs text-muted-foreground/80"> <span>
+Theme: <a href="https://github.com/meroxdotdev/merox-erudite" target="_blank" rel="noopener noreferrer" class="underline hover:text-foreground transition-colors">merox-erudite</a> </span> </div> </div> <div class="text-center text-xs text-muted-foreground/70 max-w-2xl leading-relaxed"> <strong>Disclaimer:</strong> This app does not provide medical advice. Consult your physician before starting any exercise program. The information provided by this app is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.
+</div> </div> </div> </div> </footer> <!-- Google Analytics with Consent Mode --><script>(function(){const GA_MEASUREMENT_ID = "G-FX1ZDC9DSW";
+
+  // Cookie consent handling
+  const CONSENT_COOKIE_NAME = 'kb_analytics_consent';
+
+  // Initialize consent mode before GA loads
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  // Set default consent to 'denied' (GDPR requirement)
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': 500
+  });
+
+  // Check for existing consent
+  function getConsent() {
+    const consent = localStorage.getItem(CONSENT_COOKIE_NAME);
+    return consent === 'accepted' ? 'granted' : 'denied';
+  }
+
+  // Apply saved consent on page load
+  const savedConsent = getConsent();
+  if (savedConsent === 'granted') {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
+  }
+
+  // Load Google Analytics
+  function loadGA() {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+
+    script.onload = function() {
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+
+      // Track download link clicks
+      trackDownloadClicks();
+    };
+  }
+
+  // Load GA immediately
+  loadGA();
+
+  // Cookie Consent Banner
+  function showConsentBanner() {
+    // Don't show if user already made a choice
+    if (localStorage.getItem(CONSENT_COOKIE_NAME)) {
+      return;
+    }
+
+    const banner = document.createElement('div');
+    banner.id = 'cookie-consent-banner';
+    banner.innerHTML = `
+      <div style="position: fixed; bottom: 0; left: 0; right: 0; background: hsl(var(--secondary)); border-top: 1px solid hsl(var(--border)); padding: 1rem; z-index: 9999; box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+          <div style="flex: 1; min-width: 250px; color: hsl(var(--muted-foreground)); font-size: 0.875rem;">
+            <p style="margin: 0;">
+              We use cookies and analytics to improve your experience and understand how visitors use our website. 
+              <a href="/privacy" style="color: hsl(var(--primary)); text-decoration: underline;">Learn more</a>
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button id="cookie-decline" style="background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; font-weight: 600; font-size: 0.875rem; transition: background 0.2s;">
+              Decline
+            </button>
+            <button id="cookie-accept" style="background: linear-gradient(to right, #60A5FA, #6366F1); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; font-weight: 600; font-size: 0.875rem; transition: transform 0.2s;">
+              Accept
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    // Handle accept
+    document.getElementById('cookie-accept').addEventListener('click', function() {
+      acceptCookies();
+      banner.remove();
+    });
+
+    // Handle decline
+    document.getElementById('cookie-decline').addEventListener('click', function() {
+      declineCookies();
+      banner.remove();
+    });
+
+    // Add hover effects
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    acceptBtn.addEventListener('mouseenter', () => {
+      acceptBtn.style.transform = 'scale(1.05)';
+    });
+    acceptBtn.addEventListener('mouseleave', () => {
+      acceptBtn.style.transform = 'scale(1)';
+    });
+
+    declineBtn.addEventListener('mouseenter', () => {
+      declineBtn.style.opacity = '0.8';
+    });
+    declineBtn.addEventListener('mouseleave', () => {
+      declineBtn.style.opacity = '1';
+    });
+  }
+
+  // Accept cookies
+  function acceptCookies() {
+    localStorage.setItem(CONSENT_COOKIE_NAME, 'accepted');
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
+  }
+
+  // Decline cookies
+  function declineCookies() {
+    localStorage.setItem(CONSENT_COOKIE_NAME, 'declined');
+    gtag('consent', 'update', {
+      'analytics_storage': 'denied'
+    });
+  }
+
+  // Track download link clicks
+  function trackDownloadClicks() {
+    // Track App Store download clicks
+    const appStoreLink = document.getElementById('app-store-link');
+    if (appStoreLink) {
+      appStoreLink.addEventListener('click', function(e) {
+        gtag('event', 'download_click', {
+          'event_category': 'engagement',
+          'event_label': 'App Store Download',
+          'value': 1
+        });
+      });
+    }
+
+    // Track all external links as potential download links
+    document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const platform = this.href.includes('apple') ? 'App Store' : 'Google Play';
+        gtag('event', 'download_click', {
+          'event_category': 'engagement',
+          'event_label': platform,
+          'value': 1
+        });
+      });
+    });
+  }
+
+  // Show consent banner when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showConsentBanner);
+  } else {
+    showConsentBanner();
+  }
+})();</script> </body></html> 
