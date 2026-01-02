@@ -1,0 +1,1014 @@
+# Astro Migration Plan — Kettlebell EMOM Website
+
+**Date Created:** January 2, 2026  
+**Goal:** Migrate from static HTML to Astro static site generator using merox-erudite theme
+
+---
+
+## Overview
+
+This plan outlines the step-by-step migration of the Kettlebell EMOM website from static HTML to an Astro-based site. The migration will preserve all existing content, add blog functionality, and maintain the existing brand identity while leveraging the merox-erudite theme as a foundation.
+
+### Key Objectives
+- ✅ Keep all existing content and legal documents
+- ✅ Preserve Google Analytics integration (analytics.js)
+- ✅ Add a blog section for marketing content
+- ✅ Use merox-erudite theme as base
+- ✅ Adapt to existing fonts (Inter) and brand colors
+- ✅ Enable local preview and builds
+- ✅ Prepare for GitHub Actions automated builds
+
+---
+
+## Phase 1: Environment Setup & Theme Installation
+
+### Step 1.1: Backup Current Site
+**Duration:** 5 minutes  
+**Prerequisites:** None
+
+- [x] ~~Create a backup branch~~ (Using existing `astro` branch instead)
+- [x] Create a `_archive` folder and copy current files as reference
+
+**Verification:** ✅ Archive folder created with all current files
+
+---
+
+### Step 1.2: Install Node.js & Dependencies
+**Duration:** 10 minutes  
+**Prerequisites:** Node.js 18+ installed
+
+- [x] Verify Node.js version: `node --version` (should be 18+)
+- [x] Node.js v22.19.0 installed ✅
+- [x] Verify npm: `npm --version` - npm 11.6.2 ✅
+
+**Verification:** ✅ Node and npm commands work
+
+---
+
+### Step 1.3: Clone merox-erudite Theme
+**Duration:** 15 minutes  
+**Prerequisites:** Step 1.2 complete
+
+- [x] Create a temporary directory: `mkdir ~/temp-astro`
+- [x] Clone merox-erudite: `cd ~/temp-astro && git clone https://github.com/meroxdotdev/merox-erudite.git`
+- [x] Review theme structure: Theme cloned successfully
+- [x] Note key directories: `src/`, `public/`, `src/content/`, `src/layouts/`, `src/components/`
+
+**Verification:** ✅ Theme cloned successfully, structure reviewed
+
+---
+
+### Step 1.4: Initialize Astro in Website Repo
+**Duration:** 20 minutes  
+**Prerequisites:** Steps 1.1-1.3 complete
+
+**Important:** We'll initialize Astro alongside existing files, then progressively migrate.
+
+- [x] ~~In your website repo, create new branch~~ (Using existing `astro` branch)
+- [x] Copy Astro structure from merox-erudite theme:
+  - Copy `package.json` (customized for kettlebell-emom)
+  - Copy `astro.config.ts`
+  - Copy `tsconfig.json`
+  - Copy `src/` directory structure
+  - Copy `public/` assets from theme
+- [x] Update `.gitignore` with Astro patterns
+- [x] Install dependencies: `npm install` ✅ (733 packages installed)
+- [x] Copy `.env.example` to `.env` and configure Google Analytics ID
+
+**Verification:** ✅ Run `npm run dev` - Astro dev server running at http://localhost:1234/
+
+---
+
+## Phase 2: Theme Integration & Configuration
+
+### Step 2.1: Copy merox-erudite Structure
+**Duration:** 30 minutes  
+**Prerequisites:** Phase 1 complete
+
+- [ ] Copy from `~/temp-astro/merox-erudite/` to your repo:
+  - `src/components/` → Core UI components
+  - `src/layouts/` → Page layouts
+  - `src/content/` → Content collections config (blog, authors)
+  - `src/lib/` → Utility functions
+  - `src/styles/` → Global styles
+  - `src/consts.ts` → Site configuration
+- [ ] Copy `.env.example` → `.env` for local development
+- [ ] Copy `tailwind.config.mjs` (if provided in theme)
+- [ ] Update `astro.config.mjs` to match theme requirements
+
+**Verification:** Project builds without errors: `npm run build`
+
+---
+
+### Step 2.2: Configure Site Metadata
+**Duration:** 15 minutes  
+**Prerequisites:** Step 2.1 complete
+
+Edit `src/consts.ts`:
+
+- [ ] Set `SITE_TITLE`: "Kettlebell EMOM Builder"
+- [ ] Set `SITE_DESCRIPTION`: "Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds."
+- [ ] Set `SITE_URL`: "https://kbemom.com"
+- [ ] Set author information
+- [ ] Configure social links (if applicable)
+- [ ] Review and adjust any other site-wide constants
+
+**Verification:** Metadata appears correctly when building site
+
+---
+
+### Step 2.3: Adapt Brand Colors & Typography
+**Duration:** 45 minutes  
+**Prerequisites:** Step 2.2 complete
+
+**Tailwind Configuration** (`tailwind.config.mjs`):
+
+- [ ] Update color palette to match brand guide:
+  ```javascript
+  colors: {
+    gray: {
+      900: '#111827',
+      800: '#1F2937',
+      700: '#374151',
+      // ... existing grays
+    },
+    blue: {
+      400: '#60A5FA',
+      // ... existing blues
+    },
+    indigo: {
+      600: '#4F46E5',
+    },
+    green: {
+      500: '#10B981',
+    },
+    teal: {
+      600: '#0D9488',
+    },
+  }
+  ```
+
+- [ ] Set font family to Inter:
+  ```javascript
+  fontFamily: {
+    sans: ['Inter', 'system-ui', 'sans-serif'],
+  }
+  ```
+
+**Global Styles** (`src/styles/global.css`):
+
+- [ ] Import Inter font from Google Fonts:
+  ```css
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+  ```
+
+- [ ] Set dark theme as default (bg-gray-900, text-gray-300)
+- [ ] Define gradient utilities for brand gradients
+
+**Verification:** Dev server shows Inter font and brand colors
+
+---
+
+### Step 2.4: Customize Theme Components
+**Duration:** 60 minutes  
+**Prerequisites:** Step 2.3 complete
+
+**Header Component:**
+- [ ] Review `src/components/Header.astro` (or similar)
+- [ ] Simplify navigation (Home, Blog, Support)
+- [ ] Remove unnecessary theme features (if any)
+- [ ] Match styling to brand (dark bg, white text)
+
+**Footer Component:**
+- [ ] Review `src/components/Footer.astro`
+- [ ] Add links to: Terms, Privacy, Imprint, Support
+- [ ] Add copyright: "© 2025 kbemom.com. All rights reserved."
+- [ ] Add disclaimer text (see current footer in index.html)
+
+**Homepage Layout:**
+- [ ] Decide whether to use theme's blog listing or create custom homepage
+- [ ] Plan to create custom landing page (Phase 3)
+
+**Verification:** Header and footer display correctly with brand styling
+
+---
+
+## Phase 3: Content Migration
+
+### Step 3.1: Migrate Homepage
+**Duration:** 90 minutes  
+**Prerequisites:** Phase 2 complete
+
+- [ ] Create `src/pages/index.astro`
+- [ ] Copy HTML structure from current `index.html`
+- [ ] Convert to Astro component syntax:
+  - Replace `class=` with `class=`
+  - Move inline scripts to `<script>` tags in Astro component
+  - Extract repeated sections into components if beneficial
+- [ ] Copy screenshot carousel logic
+- [ ] Ensure App Store link works
+- [ ] Test all sections: hero, features, how-it-works, core-features
+
+**Components to create (optional but recommended):**
+- [ ] `src/components/Hero.astro` - Hero section
+- [ ] `src/components/Features.astro` - Features grid
+- [ ] `src/components/HowItWorks.astro` - 3-step process
+
+**Verification:** Homepage renders identically to current HTML version
+
+---
+
+### Step 3.2: Migrate Legal Pages
+**Duration:** 45 minutes  
+**Prerequisites:** Step 3.1 complete
+
+**Privacy Policy:**
+- [ ] Move `privacy.md` content to `src/content/legal/privacy.md` (or create `src/pages/privacy.md`)
+- [ ] Create layout for legal pages: `src/layouts/LegalLayout.astro`
+- [ ] Include header, footer, and prose styling
+- [ ] Test rendering at `/privacy`
+
+**Terms of Use:**
+- [ ] Move `terms.md` content to `src/content/legal/terms.md` (or `src/pages/terms.md`)
+- [ ] Apply same legal layout
+- [ ] Test rendering at `/terms`
+
+**Alternative Approach (if using content collections):**
+- [ ] Create content collection config for legal docs
+- [ ] Create dynamic route: `src/pages/legal/[slug].astro`
+- [ ] Query and render legal docs from collection
+
+**Verification:** All legal pages render with correct Markdown formatting
+
+---
+
+### Step 3.3: Migrate Support & Imprint Pages
+**Duration:** 30 minutes  
+**Prerequisites:** Step 3.2 complete
+
+**Support Page:**
+- [ ] Create `src/pages/support.astro`
+- [ ] Copy HTML content from `support.html`
+- [ ] Convert to Astro syntax
+- [ ] Ensure form functionality works (if any)
+
+**Imprint Page:**
+- [ ] Create `src/pages/imprint.astro`
+- [ ] Copy HTML content from `imprint.html`
+- [ ] Convert to Astro syntax
+- [ ] Preserve contact reveal script
+
+**Verification:** Both pages accessible and functional
+
+---
+
+### Step 3.4: Migrate Media Assets
+**Duration:** 15 minutes  
+**Prerequisites:** Any of Phase 3
+
+- [ ] Copy `media/` folder contents to `public/media/`
+  - `appicon.png`
+  - `screenshot-1.png`
+  - `screenshot-2.png`
+  - `screenshot-3.png`
+- [ ] Update image references in pages (use `/media/` paths)
+- [ ] Test that all images load correctly
+
+**Verification:** All images display on homepage and other pages
+
+---
+
+### Step 3.5: Migrate Analytics
+**Duration:** 30 minutes  
+**Prerequisites:** Step 3.1 complete
+
+- [ ] Copy `analytics.js` to `public/analytics.js`
+- [ ] Create Astro component: `src/components/Analytics.astro`
+- [ ] In this component, load `/analytics.js` script
+- [ ] Add Analytics component to base layout (`src/layouts/BaseLayout.astro` or main layout)
+- [ ] Test GDPR consent banner appears
+- [ ] Test GA tracking (check browser console / GA debug)
+
+**Verification:** Analytics loads, consent banner works, tracking fires
+
+---
+
+### Step 3.6: Configure SEO & Metadata
+**Duration:** 30 minutes  
+**Prerequisites:** Phase 2 complete
+
+- [ ] Review `src/components/BaseHead.astro` (or similar from theme)
+- [ ] Ensure meta tags include:
+  - Title: "Kettlebell EMOM Builder — Stronger through Structure"
+  - Description from brand guide
+  - Open Graph tags for social sharing
+  - Twitter Card tags
+- [ ] Add favicon (use `appicon.png` or create favicon set)
+- [ ] Set canonical URL handling
+- [ ] Configure sitemap generation (via `@astrojs/sitemap`)
+
+**Verification:** View page source, confirm meta tags present
+
+---
+
+### Step 3.7: Add robots.txt & CNAME
+**Duration:** 5 minutes  
+**Prerequisites:** Phase 1 complete
+
+- [ ] Copy `robots.txt` to `public/robots.txt`
+- [ ] Copy `CNAME` to `public/CNAME`
+- [ ] Verify these files are in `public/` (not `src/`)
+
+**Verification:** Files accessible at `/robots.txt` and `/CNAME` after build
+
+---
+
+## Phase 4: Blog Setup
+
+### Step 4.1: Configure Blog Content Collection
+**Duration:** 20 minutes  
+**Prerequisites:** Phase 2 complete
+
+- [ ] Review `src/content/config.ts` from merox-erudite
+- [ ] Ensure `blog` collection is defined with schema:
+  - `title` (string)
+  - `description` (string)
+  - `pubDate` (date)
+  - `author` (string or reference)
+  - `tags` (array of strings)
+  - `image` (optional)
+- [ ] Create `src/content/blog/` directory (if not exists)
+- [ ] Create `src/content/authors/` directory (if needed)
+
+**Verification:** Content collection schema compiles without errors
+
+---
+
+### Step 4.2: Create Blog Listing Page
+**Duration:** 30 minutes  
+**Prerequisites:** Step 4.1 complete
+
+- [ ] Create or adapt `src/pages/blog/index.astro`
+- [ ] Query all blog posts using Astro content collections API
+- [ ] Display posts in reverse chronological order
+- [ ] Show: title, description, date, tags
+- [ ] Add pagination if theme supports it
+- [ ] Apply brand styling (dark theme, gradients)
+
+**Verification:** `/blog` page loads (even if empty initially)
+
+---
+
+### Step 4.3: Create Blog Post Layout
+**Duration:** 45 minutes  
+**Prerequisites:** Step 4.2 complete
+
+- [ ] Create or adapt `src/layouts/BlogPost.astro`
+- [ ] Include:
+  - Post title
+  - Published date
+  - Author info
+  - Tag list
+  - Post content (rendered MDX)
+  - Previous/Next post navigation (optional)
+- [ ] Add Table of Contents component (if theme has it)
+- [ ] Style with brand colors and typography
+
+**Verification:** Can create test post and it renders correctly
+
+---
+
+### Step 4.4: Create Sample Blog Posts
+**Duration:** 30 minutes  
+**Prerequisites:** Step 4.3 complete
+
+Create 2-3 sample blog posts to test:
+
+**Post 1:** `src/content/blog/welcome.mdx`
+- [ ] Title: "Welcome to the Kettlebell EMOM Blog"
+- [ ] Content: Introduction to blog, brand values
+- [ ] Include an image
+- [ ] Test frontmatter parsing
+
+**Post 2:** `src/content/blog/structure-beats-motivation.mdx`
+- [ ] Title: "Structure Beats Motivation"
+- [ ] Content: Expand on brand messaging
+- [ ] Test tags and categories
+
+**Post 3:** (Optional) Test MDX features
+- [ ] Include custom components
+- [ ] Test code blocks, images, etc.
+
+**Verification:** All sample posts display correctly on blog listing and individual pages
+
+---
+
+### Step 4.5: Blog SEO & RSS Feed
+**Duration:** 20 minutes  
+**Prerequisites:** Step 4.4 complete
+
+- [ ] Ensure each blog post has proper meta tags (title, description, OG image)
+- [ ] Configure RSS feed (theme may include this)
+- [ ] Create `src/pages/rss.xml.js` (or similar) if needed
+- [ ] Test RSS feed at `/rss.xml`
+- [ ] Add RSS link to footer or header
+
+**Verification:** RSS feed validates at [W3C Feed Validator](https://validator.w3.org/feed/)
+
+---
+
+## Phase 5: Testing & Optimization
+
+### Step 5.1: Local Testing
+**Duration:** 60 minutes  
+**Prerequisites:** Phase 4 complete
+
+Test all pages and functionality:
+
+- [ ] Homepage: All sections render, images load, carousel works
+- [ ] Blog listing: Posts display, pagination works (if applicable)
+- [ ] Blog posts: Content renders, navigation works
+- [ ] Legal pages: Privacy, Terms render correctly
+- [ ] Support page: Form works (if applicable)
+- [ ] Imprint page: Contact reveal works
+- [ ] Navigation: All links work
+- [ ] Footer: All links work
+- [ ] Analytics: Banner appears, tracking works
+- [ ] Mobile responsiveness: Test on various screen sizes
+- [ ] Dark theme: Verify colors match brand
+
+**Tools:**
+- Browser DevTools (responsive mode)
+- Console for JS errors
+- Network tab for analytics verification
+
+**Verification:** Create testing checklist, mark all items as passing
+
+---
+
+### Step 5.2: Build & Preview Production
+**Duration:** 20 minutes  
+**Prerequisites:** Step 5.1 complete
+
+- [ ] Run production build: `npm run build`
+- [ ] Fix any build errors or warnings
+- [ ] Preview production build: `npm run preview`
+- [ ] Test production site at `localhost:4321` (or configured port)
+- [ ] Verify all assets load correctly
+- [ ] Check build output size in `dist/`
+
+**Verification:** Production build succeeds with no errors
+
+---
+
+### Step 5.3: Performance Optimization
+**Duration:** 30 minutes  
+**Prerequisites:** Step 5.2 complete
+
+- [ ] Run Lighthouse audit on production preview
+- [ ] Check Core Web Vitals scores
+- [ ] Optimize images if needed (use Astro image optimization)
+- [ ] Review bundle size
+- [ ] Ensure critical CSS is inlined
+- [ ] Test page load speed
+
+**Target Metrics:**
+- Performance: 90+
+- Accessibility: 95+
+- Best Practices: 95+
+- SEO: 95+
+
+**Verification:** Lighthouse scores meet targets
+
+---
+
+### Step 5.4: Cross-Browser Testing
+**Duration:** 30 minutes  
+**Prerequisites:** Step 5.3 complete
+
+Test in multiple browsers:
+
+- [ ] Chrome/Chromium (latest)
+- [ ] Firefox (latest)
+- [ ] Safari (latest - Mac/iOS)
+- [ ] Mobile Safari (iOS)
+- [ ] Mobile Chrome (Android)
+
+**Focus areas:**
+- Layout rendering
+- Font loading
+- Gradients
+- Animations (screenshot carousel)
+- Analytics consent banner
+
+**Verification:** Site works consistently across browsers
+
+---
+
+## Phase 6: Deployment Setup
+
+### Step 6.1: Choose Hosting Platform
+**Duration:** 15 minutes  
+**Prerequisites:** Phase 5 complete
+
+**Recommended options:**
+1. **Vercel** (merox-erudite demo uses this)
+   - Zero-config Astro support
+   - Free tier available
+   - Automatic deployments from GitHub
+   
+2. **Netlify**
+   - Good Astro support
+   - Free tier available
+   - GitHub integration
+
+3. **GitHub Pages**
+   - Free for public repos
+   - Requires GitHub Actions setup
+   - Good for static sites
+
+**Decision:**
+- [ ] Choose hosting platform based on needs
+- [ ] Consider: custom domain support, build minutes, bandwidth
+
+**Verification:** Platform account created
+
+---
+
+### Step 6.2: Configure Build Settings
+**Duration:** 20 minutes  
+**Prerequisites:** Step 6.1 complete
+
+**For Vercel/Netlify:**
+- [ ] Connect GitHub repository
+- [ ] Set build command: `npm run build`
+- [ ] Set publish directory: `dist`
+- [ ] Set Node.js version: 18+ (in `package.json` engines field)
+- [ ] Add environment variables (if any, e.g., for analytics)
+
+**For GitHub Pages:**
+- [ ] Configure `astro.config.mjs` for GitHub Pages:
+  ```javascript
+  export default defineConfig({
+    site: 'https://kbemom.com',
+    base: '/',
+  });
+  ```
+
+**Verification:** Settings saved, ready for first deployment
+
+---
+
+### Step 6.3: First Deployment
+**Duration:** 30 minutes  
+**Prerequisites:** Step 6.2 complete
+
+- [ ] Push astro-migration branch to GitHub
+- [ ] Trigger deployment (automatic or manual)
+- [ ] Monitor build logs for errors
+- [ ] Check deployment preview URL
+- [ ] Test deployed site thoroughly
+- [ ] Fix any deployment-specific issues
+
+**Common issues to check:**
+- Path references (use `/` prefix for public assets)
+- Environment variables
+- API routes (if any)
+
+**Verification:** Site successfully deploys and is accessible
+
+---
+
+### Step 6.4: Custom Domain Setup
+**Duration:** 20 minutes  
+**Prerequisites:** Step 6.3 complete
+
+- [ ] Add custom domain in hosting platform: `kbemom.com`
+- [ ] Configure DNS records:
+  - For Vercel: Add A/CNAME records as instructed
+  - For Netlify: Add A/CNAME records as instructed
+  - For GitHub Pages: Configure CNAME and A records
+- [ ] Wait for DNS propagation (can take up to 48 hours)
+- [ ] Enable HTTPS/SSL (usually automatic)
+- [ ] Test site at `https://kbemom.com`
+
+**Verification:** Site loads correctly at custom domain with HTTPS
+
+---
+
+## Phase 7: GitHub Actions for Automated Builds
+
+### Step 7.1: Create GitHub Actions Workflow
+**Duration:** 30 minutes  
+**Prerequisites:** Phase 6 complete, GitHub Pages hosting chosen
+
+**Note:** Only needed if using GitHub Pages or want additional automation. Vercel/Netlify handle this automatically.
+
+- [ ] Create `.github/workflows/deploy.yml`
+- [ ] Configure workflow to:
+  - Trigger on push to `main` branch
+  - Trigger on push to `src/content/blog/**` (for new blog posts)
+  - Check out code
+  - Setup Node.js
+  - Install dependencies
+  - Build site
+  - Deploy to hosting platform or GitHub Pages
+- [ ] Commit and push workflow file
+
+**Sample workflow structure:**
+```yaml
+name: Deploy Astro site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      # Deploy step depends on hosting platform
+```
+
+**Verification:** Workflow file committed to repo
+
+---
+
+### Step 7.2: Test Automated Deployment
+**Duration:** 20 minutes  
+**Prerequisites:** Step 7.1 complete
+
+- [ ] Make a small change (e.g., update footer year)
+- [ ] Commit and push to main branch
+- [ ] Go to GitHub Actions tab
+- [ ] Monitor workflow execution
+- [ ] Check for any errors
+- [ ] Verify deployed site reflects the change
+
+**Verification:** Automated deployment works end-to-end
+
+---
+
+### Step 7.3: Configure Blog Publishing Workflow
+**Duration:** 20 minutes  
+**Prerequisites:** Step 7.2 complete
+
+Document the blog publishing workflow:
+
+1. **Local development:**
+   - Create new post: `src/content/blog/new-post.mdx`
+   - Add frontmatter (title, date, description, tags, author)
+   - Write content in MDX
+   - Preview locally: `npm run dev`
+   - Review at `localhost:4321/blog/new-post`
+
+2. **Publishing:**
+   - Commit post file
+   - Push to main branch
+   - GitHub Actions automatically builds and deploys
+   - Post is live within minutes
+
+3. **Alternative: Draft posts:**
+   - Add `draft: true` to frontmatter
+   - Filter drafts in blog listing query
+   - Remove draft flag when ready to publish
+
+- [ ] Create documentation: `BLOG_PUBLISHING_GUIDE.md`
+- [ ] Test publishing flow with a new post
+
+**Verification:** Can publish blog posts via Git workflow
+
+---
+
+## Phase 8: Finalization & Cleanup
+
+### Step 8.1: Remove Old Files
+**Duration:** 15 minutes  
+**Prerequisites:** All previous phases complete, site fully tested
+
+- [ ] Delete old HTML files:
+  - `index.html`
+  - `imprint.html`
+  - `support.html`
+  - `privacy.md` (if moved to `src/`)
+  - `terms.md` (if moved to `src/`)
+- [ ] Keep in root:
+  - `analytics.js` (now in `public/`)
+  - `robots.txt` (now in `public/`)
+  - `CNAME` (now in `public/`)
+  - `brand-guide.md` (keep for reference)
+  - `product-brief.md` (keep for reference)
+- [ ] Move old files to `_archive/` if you want to keep them for reference
+- [ ] Commit cleanup: `git add -A && git commit -m "Clean up old HTML files"`
+
+**Verification:** Repository is clean, only Astro structure remains
+
+---
+
+### Step 8.2: Update Documentation
+**Duration:** 30 minutes  
+**Prerequisites:** Step 8.1 complete
+
+- [ ] Update `README.md` with:
+  - Project description
+  - Tech stack (Astro, Tailwind, merox-erudite theme)
+  - Installation instructions
+  - Development commands (`npm run dev`, `npm run build`)
+  - Deployment information
+  - Blog publishing guide
+  - Link to brand guide
+- [ ] Create `CONTRIBUTING.md` (if planning to accept contributions)
+- [ ] Document environment variables in `.env.example`
+
+**Verification:** README is comprehensive and accurate
+
+---
+
+### Step 8.3: Final Testing & QA
+**Duration:** 60 minutes  
+**Prerequisites:** Step 8.2 complete
+
+Complete end-to-end testing on production site:
+
+- [ ] All pages load correctly
+- [ ] All links work (internal and external)
+- [ ] App Store link works
+- [ ] Forms work (if any)
+- [ ] Analytics tracking works
+- [ ] GDPR consent banner works
+- [ ] SEO meta tags correct
+- [ ] RSS feed valid
+- [ ] Sitemap generates correctly (`/sitemap-index.xml`)
+- [ ] 404 page works
+- [ ] Performance is acceptable
+- [ ] Mobile experience is good
+- [ ] All images load
+- [ ] No console errors
+
+**Verification:** Create final QA checklist, all items pass
+
+---
+
+### Step 8.4: Merge to Main & Go Live
+**Duration:** 15 minutes  
+**Prerequisites:** All previous steps complete and tested
+
+- [ ] Create pull request: `astro-migration` → `main`
+- [ ] Review all changes
+- [ ] Ensure all tests pass
+- [ ] Merge pull request
+- [ ] Tag release: `git tag -a v1.0.0 -m "Astro migration complete"`
+- [ ] Push tag: `git push origin v1.0.0`
+- [ ] Monitor production deployment
+- [ ] Verify live site at `https://kbemom.com`
+
+**Verification:** Site is live on production with Astro
+
+---
+
+### Step 8.5: Post-Launch Monitoring
+**Duration:** Ongoing
+
+First 24-48 hours after launch:
+
+- [ ] Monitor Google Analytics for traffic
+- [ ] Check Google Search Console for crawl errors
+- [ ] Monitor hosting platform for errors/downtime
+- [ ] Check for any user-reported issues
+- [ ] Review performance metrics
+- [ ] Check social media sharing (OG tags)
+
+**Verification:** No major issues, site performing well
+
+---
+
+## Phase 9: Optional Enhancements
+
+### Step 9.1: Advanced Blog Features
+**Duration:** Variable
+
+Consider adding:
+
+- [ ] Blog post search functionality
+- [ ] Tag filtering
+- [ ] Related posts section
+- [ ] Reading time estimates
+- [ ] Share buttons
+- [ ] Comments system (using Disqus integration from merox-erudite)
+- [ ] Newsletter signup (using Brevo integration from merox-erudite)
+
+**Priority:** Medium - Add as needed
+
+---
+
+### Step 9.2: Marketing Automation
+**Duration:** Variable
+
+Consider adding:
+
+- [ ] Newsletter integration (Brevo/Sendinblue from theme)
+- [ ] Email signup forms on blog posts
+- [ ] GDPR-compliant consent for newsletters
+- [ ] Automated email campaigns for new posts
+
+**Priority:** Medium - Good for marketing goals
+
+---
+
+### Step 9.3: Content Strategy & SEO
+**Duration:** Ongoing
+
+Plan content marketing:
+
+- [ ] Create editorial calendar for blog posts
+- [ ] Research keywords for fitness/kettlebell niche
+- [ ] Plan content themes:
+  - "Structure beats motivation" series
+  - "Train for decades" series
+  - EMOM training guides
+  - Kettlebell technique tips
+  - Success stories (if available)
+- [ ] Set up Google Search Console
+- [ ] Submit sitemap to search engines
+- [ ] Monitor search rankings
+
+**Priority:** High - Essential for marketing objectives
+
+---
+
+### Step 9.4: Performance Monitoring
+**Duration:** Variable
+
+Set up monitoring tools:
+
+- [ ] Umami Analytics (privacy-friendly alternative, supported by theme)
+- [ ] Vercel Analytics (if using Vercel)
+- [ ] Sentry for error tracking
+- [ ] Uptime monitoring (e.g., UptimeRobot)
+
+**Priority:** Low - Nice to have
+
+---
+
+## Summary of Key Files & Directories
+
+### Files to Create/Modify
+```
+kettlebell-emom-website/
+├── .env                        # Environment variables (create from .env.example)
+├── .gitignore                  # Update to include Astro patterns
+├── astro.config.mjs            # Astro configuration
+├── package.json                # Node.js dependencies
+├── tailwind.config.mjs         # Tailwind with brand colors
+├── tsconfig.json               # TypeScript config
+├── README.md                   # Updated project docs
+├── BLOG_PUBLISHING_GUIDE.md    # Blog workflow docs
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # CI/CD workflow (optional)
+├── public/
+│   ├── media/                  # Images (moved from root)
+│   ├── analytics.js            # Google Analytics
+│   ├── robots.txt              # Moved from root
+│   └── CNAME                   # Moved from root
+└── src/
+    ├── consts.ts               # Site configuration
+    ├── content/
+    │   ├── config.ts           # Content collections schema
+    │   ├── blog/               # Blog post MDX files
+    │   ├── authors/            # Author profiles (if needed)
+    │   └── legal/              # Legal docs (alternative location)
+    ├── layouts/
+    │   ├── BaseLayout.astro    # Main layout
+    │   ├── BlogPost.astro      # Blog post layout
+    │   └── LegalLayout.astro   # Legal pages layout
+    ├── components/
+    │   ├── Header.astro        # Site header
+    │   ├── Footer.astro        # Site footer
+    │   ├── Analytics.astro     # Analytics integration
+    │   ├── Hero.astro          # Homepage hero (optional)
+    │   └── Features.astro      # Feature sections (optional)
+    ├── pages/
+    │   ├── index.astro         # Homepage
+    │   ├── privacy.md          # Privacy policy
+    │   ├── terms.md            # Terms of use
+    │   ├── imprint.astro       # Imprint/Legal
+    │   ├── support.astro       # Support page
+    │   ├── blog/
+    │   │   ├── index.astro     # Blog listing
+    │   │   └── [slug].astro    # Individual blog posts
+    │   └── rss.xml.js          # RSS feed
+    ├── styles/
+    │   └── global.css          # Global styles with brand theme
+    └── lib/
+        └── utils.ts            # Utility functions
+```
+
+### Files to Delete (after migration complete)
+- `index.html`
+- `imprint.html`
+- `support.html`
+- Old `privacy.md`, `terms.md` from root (if moved)
+
+### Files to Keep
+- `brand-guide.md` (reference)
+- `product-brief.md` (reference)
+- Backup branch for safety
+
+---
+
+## Estimated Timeline
+
+| Phase | Duration | Dependencies |
+|-------|----------|--------------|
+| Phase 1: Setup | 1 hour | None |
+| Phase 2: Theme Integration | 2.5 hours | Phase 1 |
+| Phase 3: Content Migration | 4 hours | Phase 2 |
+| Phase 4: Blog Setup | 2.5 hours | Phase 2 |
+| Phase 5: Testing | 2.5 hours | Phases 3 & 4 |
+| Phase 6: Deployment | 1.5 hours | Phase 5 |
+| Phase 7: GitHub Actions | 1 hour | Phase 6 |
+| Phase 8: Finalization | 2 hours | Phase 7 |
+| **Total Core Migration** | **~17 hours** | |
+| Phase 9: Enhancements | Variable | Phase 8 |
+
+**Realistic Timeline:** 2-3 days of focused work, or 1-2 weeks with breaks
+
+---
+
+## Risk Mitigation
+
+### Potential Risks & Solutions
+
+1. **Risk:** Breaking existing site during migration
+   - **Solution:** Work in branch, keep backup, test thoroughly before merging
+
+2. **Risk:** Analytics tracking breaks
+   - **Solution:** Test analytics early, keep existing `analytics.js` approach
+
+3. **Risk:** SEO rankings drop during transition
+   - **Solution:** Maintain URL structure, use redirects if needed, submit new sitemap
+
+4. **Risk:** Custom domain issues
+   - **Solution:** Plan DNS changes carefully, use low TTL during transition
+
+5. **Risk:** Build errors in production
+   - **Solution:** Test production builds locally, use staging environment
+
+6. **Risk:** Theme conflicts with brand styling
+   - **Solution:** Treat theme as foundation, customize extensively, document overrides
+
+---
+
+## Success Criteria
+
+✅ Site successfully migrated to Astro  
+✅ All existing pages render correctly  
+✅ Analytics tracking works  
+✅ Blog functionality operational  
+✅ Local development environment works  
+✅ Automated deployment configured  
+✅ Performance metrics meet or exceed previous site  
+✅ No SEO regression  
+✅ Brand styling fully implemented  
+✅ Documentation complete  
+
+---
+
+## Next Steps After Migration
+
+1. **Content Creation:** Start writing blog posts following content strategy
+2. **SEO Optimization:** Submit sitemap, optimize meta tags per post
+3. **Marketing:** Share blog posts on social media
+4. **Analytics:** Monitor traffic and user behavior
+5. **Iteration:** Continuously improve based on data
+6. **Features:** Add enhancements from Phase 9 as needed
+
+---
+
+## Resources
+
+- **Astro Documentation:** https://docs.astro.build
+- **merox-erudite Theme:** https://github.com/meroxdotdev/merox-erudite
+- **merox-erudite Demo:** https://merox-erudite.vercel.app/
+- **Tailwind CSS:** https://tailwindcss.com/docs
+- **MDX Documentation:** https://mdxjs.com/
+- **Vercel Deployment:** https://vercel.com/docs
+- **GitHub Actions:** https://docs.github.com/en/actions
+
+---
+
+**Document Version:** 1.0  
+**Last Updated:** January 2, 2026  
+**Maintained by:** Project Owner
