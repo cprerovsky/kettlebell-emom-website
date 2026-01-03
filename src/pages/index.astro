@@ -4,7 +4,6 @@ import PageHead from '@/components/PageHead.astro'
 import BlogCard from '@/components/BlogCard.astro'
 import { SITE } from '@/consts'
 import { getAllPosts } from '@/lib/data-utils'
-import mriImage from '@/assets/blog/mri.webp'
 
 const pageTitle = `${SITE.title} — Stronger through Structure`
 const pageDescription = SITE.description
@@ -127,7 +126,7 @@ const recentPosts = allPosts.slice(0, 3)
           <!-- Left: Image -->
           <div class="flex justify-center md:justify-start">
             <div class="w-full max-w-xs rounded-xl overflow-hidden border border-border shadow-lg">
-              <img src={mriImage.src} alt="MRI scan that inspired the developer to build a more efficient workout tool" class="w-full h-auto">
+              <img src="/media/blog/mri.webp?v=1" alt="MRI scan that inspired the developer to build a more efficient workout tool" class="w-full h-auto">
             </div>
           </div>
 
