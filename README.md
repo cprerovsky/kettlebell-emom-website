@@ -2,7 +2,7 @@
 
 **Built with Astro** • **Powered by merox-erudite theme**
 
-> Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds.
+> Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts built in seconds.
 
 ---
 

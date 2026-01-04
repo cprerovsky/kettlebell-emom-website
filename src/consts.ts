@@ -3,7 +3,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'Kettlebell EMOM Builder',
   description:
-    'Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts — built in seconds.',
+    'Stronger through structure. Train for decades, not for likes. Smart kettlebell workouts built in seconds.',
   href: 'https://kbemom.com',
   author: 'kettlebell-emom',
   locale: 'en-US',

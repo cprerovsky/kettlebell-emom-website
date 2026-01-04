@@ -1,4 +1,4 @@
-# Terms of Use — Kettlebell EMOM Builder
+# Terms of Use | Kettlebell EMOM Builder
 
 **Last updated:** November 6, 2025
 
