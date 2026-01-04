@@ -22,6 +22,10 @@ export default defineConfig({
   outDir: './docs',
   site: 'https://kbemom.com', // Custom domain
   // Static output - API routes are handled by Cloudflare Pages Functions in /functions folder
+  redirects: {
+    '/privacy.html': '/privacy/',
+    '/terms.html': '/terms/',
+  },
   integrations: [
     expressiveCode({
       themes: ['github-light', 'github-dark'],
