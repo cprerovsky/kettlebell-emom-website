@@ -20,20 +20,19 @@ On our website, we use **Google Analytics** to understand visitor behavior and i
 ## 2. Data Controller
 The data controller responsible for your data is:
 
-Clemens Prerovsky  
+Clemens Prerovsky 
 Email: legal@kbemom.com  
 
 ## 3. Data We Collect
 
-### a) Mobile App: On-device storage only
+### a) Mobile App | On-device storage only
 - **No personal accounts**: We do not collect names, email addresses, or login details.  
 - **No remote workout storage**: Workout data is not transmitted or stored on our servers.  
 - **On-device storage (Capacitor Preferences)**: We store the following information locally on your device to operate the App:  
-	- The number of free workouts used (to determine when the paywall applies).  
 	- Workout configuration preferences such as selected muscle groups, number of rounds, and number of exercises.  
 	This data does not leave your device and is under your control. Clearing app data or reinstalling the App may reset this information.
 
-### b) Mobile App: Privacy-Focused Analytics (TelemetryDeck)
+### b) Mobile App | Privacy-Focused Analytics (TelemetryDeck)
 We use **TelemetryDeck**, a privacy-first analytics service, to understand how the app is used and improve the user experience.
 
 **What TelemetryDeck collects:**
@@ -54,7 +53,7 @@ We use **TelemetryDeck**, a privacy-first analytics service, to understand how t
 
 For more information: [TelemetryDeck Privacy Policy](https://telemetrydeck.com/privacy/)
 
-### c) Website: Google Analytics
+### c) Website | Google Analytics
 We use **Google Analytics 4** on our website (kbemom.com) to understand how visitors use our site. This helps us improve the user experience and measure the effectiveness of our content.
 
 **What Google Analytics collects:**
@@ -114,7 +113,7 @@ You have the following rights under GDPR:
 - **Deletion** of your data  
 - **Restriction or objection** to processing  
 - **Data portability**  
-- **Withdrawal of consent** at any time (for cookies/analytics). Simply decline cookies in the banner or clear your browser's cookies
+- **Withdrawal of consent** at any time (for cookies/analytics) | simply decline cookies in the banner or clear your browser's cookies
 - **Complaint** to the Austrian Data Protection Authority (Datenschutzbehörde, dsb@dsb.gv.at)  
 
 **To opt out of Google Analytics:**
@@ -177,5 +176,5 @@ We may update this Privacy Policy. Updates will be posted on this page and, for 
 ## 13. Contact Us
 If you have any questions or requests regarding this Privacy Policy, please contact:
 
-Clemens Prerovsky  
+Clemens Prerovsky 
 Email: contact@kbemom.com
